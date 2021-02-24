@@ -1,0 +1,38 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.background{
+  width:60%;
+  height:60%;
+}
+
+// body{
+//   background: image-url('home/homePage.jpg');
+//   background-repeat: no-repeat;
+//   background-size: auto;
+// }
+.container {
+  width: 1000px;
+  height:700px;
+  background-image: url('home/homePage2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  text-align:center;
+  margin:auto;
+  padding:0;
+  opacity:90%
+}
+.fonts{
+  font-size: 85px;
+  font-weight: 30px;
+  color: gold;
+  font-family: 'Kumar One Outline', cursive;
+  
+}
+.subtitle{
+  font-size: 30px;
+  font-weight: 40px;
+  color: white;
+  font-family: 'Rochester', cursive;;
+}

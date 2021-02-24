@@ -13,4 +13,14 @@
  *= require_tree .
  *= require_self
  */
- @import 'bootstrap/scss/bootsrap';
+ @import 'bootstrap/scss/bootstrap';
+
+ ul.nav li.dropdown:hover > ul.dropdown-menu {
+  display: block;    
+}
+.navbar{
+  width: 100%;
+  margin: 0px auto;
+  position: relative;
+  
+}
