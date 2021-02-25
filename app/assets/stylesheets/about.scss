@@ -1,0 +1,24 @@
+.image{
+  width: 300px;
+  height: 300px;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+.about-container{
+  background-image: url('home/homePage2.jpg');
+  width: 1000px;
+  height:700px;
+  background-repeat: no-repeat;
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  text-align:center;
+  margin:auto;
+  margin-right: 0px;
+  padding:0;
+  opacity:40%
+  
+}
+.txt{
+  text-align: center;
+}
