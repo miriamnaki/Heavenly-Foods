@@ -1,0 +1,17 @@
+ <h1 class="text-right">test</h1>
+ <div class='container'>
+ <div class="row">
+ <% @menu_items.each do |item|%>
+
+
+  <div class='col-4'> 
+    <%= item.title%>
+    <%= item.description%>
+    <%= item.price%>
+    <%= image_tag(item.image,class:'menu_item_image') %>
+
+  
+</div>
+  <%end%>
+  </div>
+</div>

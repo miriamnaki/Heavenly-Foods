@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   get('/gallery',{to:'gallery#gallery'})
   get('/contact',{to:'contact#contact'})
   get('/reservation',{to:'reservation#reservation'})
+
+  resources :users
+  resources :menu_items
+
   
 end
