@@ -1,0 +1,14 @@
+<%= form_with model:@booking, local: true do |f|%>
+<%= f.label :num_people%>
+<%= f.select :num_people, Array(1..20)%>
+
+<%= f.label :date%>
+<%= f.date_field :date, min: Date.today %>
+
+<%= f.label :time%>
+<%= f.time_field :time%>
+
+<%= f.submit 'Submit' %>
+
+
+<%end%>
