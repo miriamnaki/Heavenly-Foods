@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   
   get('/about',{to:'about#about'})
   get('/gallery',{to:'gallery#gallery'})
+  get('/contact',{to:'contact#contact'})
+  get('/reservation',{to:'reservation#reservation'})
   
 end

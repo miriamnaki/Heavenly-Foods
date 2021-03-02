@@ -14,3 +14,10 @@ require("@rails/ujs").start()
 require('turbolinks').start()
 require('@rails/activestorage').start()
 require('channels')
+
+$(document).on('click', function(){
+  $('#datetimepicker').datetimepicker({
+    format: "YYYY-MM-DD",
+      autoclose: true
+  });
+});
