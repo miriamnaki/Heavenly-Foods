@@ -1,6 +1,28 @@
-<h1><%= @menu_item.title %></h1>
+<div class='container'>
 
-<p><%= @menu_item.price%></p>
-<p><%= @menu_item.description%></p>
+<div class='inline'>
+<%= image_tag(@menu_item.image,class:'show') %>
+</div>
 
-<%= image_tag(@menu_item.image) %>
+<div class='inline'>
+<h1 class='title2'><%= @menu_item.title %></h1>
+<p class='label'><%= @menu_item.description%></p>
+<p class='label'>$<%= @menu_item.price%></p>
+
+<div class='inline2'>
+<p class='label'>Quantity</p>
+</div>
+
+<div class='inline2'>
+<button class='btn btn-success cart'> ADD TO CART</button>
+</div>
+
+<h6 class='label'>CATEGORIES:</h6>
+<h6 class='label'>TAGS:</h6>
+<h6 class='label'>SHARE</h6>
+</div>
+
+<h2>ADD A REVIEW</h2>
+
+
+</div>

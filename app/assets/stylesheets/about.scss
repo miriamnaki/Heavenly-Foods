@@ -1,24 +1,41 @@
-.image{
-  width: 300px;
-  height: 300px;
+#image{
+  width: 600px;
+  height: 400px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  opacity: 100%;
   
 }
-.about-container{
-  background-image: url('home/homePage2.jpg');
-  width: 1000px;
-  height:700px;
-  background-repeat: no-repeat;
-  background-size: cover; /* or contain depending on what you want */
-  background-position: center center;
-  text-align:center;
-  margin:auto;
-  margin-right: 0px;
-  padding:0;
-  opacity:40%
+#image2{
+  width: 600px;
+  height: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  opacity: 100%;
   
 }
+
 .txt{
   text-align: center;
+  margin-top: 5%;
+  font-family: 'Vollkorn', serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+.backgroundpic{
+  width: 1310px;
+  height:700px;
+  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('home/about_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+  
 }

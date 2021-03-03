@@ -2,9 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .form-group{
-  max-width: 550px;
+  max-width: 500px;
 }
 .required-field::after {
   content: "*";
   color: red;
 }
+
+#title{
+  margin-left: 150px;
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: 'Akaya Telivigala', cursive;
+}
+.form-control{
+  outline-color: goldenrod !important;
+}
+
+  .btn-outline-primary:hover,
+  .btn-outline-primary,
+  .btn-primary,
+  .btn-outline-primary:active,
+  .btn-outline-primary:visited,
+  .btn-outline-primary:focus {
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
+    color:white;
+    // width: 40%;
+}
+

@@ -4,4 +4,40 @@
 
 .menu_item_image{
   max-width: 100%;
+  margin-top: 10%;
 }
+.title{
+  font-family: 'Shippori Mincho', serif;
+  margin-left: 100%;
+  color:goldenrod;
+  
+}
+.label{
+  font-family: 'Shippori Mincho', serif;
+  margin-left: 10%;
+}
+.title2{
+  font-family: 'Shippori Mincho', serif;
+  margin-left: 10%;
+  margin-top:10px;
+}
+
+div.inline{
+  display: inline-block;
+  vertical-align: top;
+}
+.show{
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;   
+  }
+div.inline2{
+  display: inline-block; 
+}
+.cart{
+  margin-left: 25%;
+  width: 200px;
+  background-color: goldenrod !important;
+}
+

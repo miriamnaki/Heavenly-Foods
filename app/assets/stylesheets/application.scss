@@ -28,12 +28,24 @@ nav{
   color: black;
   width: 100%;
 }
-.address{
-  text-align: center center;
-  color: red;
-}
+
 .address{
   background-color: lightslategray;
   color: black;
 
 }
+footer{
+  background-color: black;
+  color: white;
+}
+
+.fas.fa-map-marker-alt{
+  font-size:20px;
+}
+.far.fa-clock{
+  font-size:20px;
+}
+.fas.fa-phone{
+  font-size:20px;
+}
+

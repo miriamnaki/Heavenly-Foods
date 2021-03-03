@@ -9,15 +9,17 @@
 //   background-size: auto;
 // }
  .background{
-  width: 1000px;
+  width: 1310px;
   height:700px;
   background-image: url('home/homePage2.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /* or contain depending on what you want */
+  background-size: cover; 
   background-position: center center;
   text-align:center;
-  margin:auto;
-  margin-right: 0px;
+  margin-right:0px;
+  margin-left:0px;
+  position: relative;
+  
   padding:0;
   opacity:90%
 }

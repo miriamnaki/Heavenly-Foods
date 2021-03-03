@@ -7,13 +7,27 @@
   height: 300px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .heading{
   text-align: center;
   font-size: 40px;
   color:black;
-  margin-top: 10px;
-  font-family: 'Dancing Script', cursive;
+  margin-top: 0px;
+  font-family: 'Akaya Telivigala', cursive;
+  // font-family: sans-serif;
+}
+.backpic{
+  width: 1310px;
+  height:700px;
+  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('gallery/galleryback.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+  
 }
 
