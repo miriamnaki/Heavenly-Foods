@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_205705) do
+ActiveRecord::Schema.define(version: 2021_03_04_011534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2021_03_03_205705) do
     t.index ["menu_item_id"], name: "index_menu_item_categories_on_menu_item_id"
   end
 
+  create_table "menu_item_tags", force: :cascade do |t|
+    t.bigint "tag_id", null: false
+    t.bigint "menu_item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_item_id"], name: "index_menu_item_tags_on_menu_item_id"
+    t.index ["tag_id"], name: "index_menu_item_tags_on_tag_id"
+  end
+
   create_table "menu_items", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -86,6 +95,12 @@ ActiveRecord::Schema.define(version: 2021_03_03_205705) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -98,6 +113,8 @@ ActiveRecord::Schema.define(version: 2021_03_03_205705) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "users"
+  add_foreign_key "menu_item_tags", "menu_items"
+  add_foreign_key "menu_item_tags", "tags"
   add_foreign_key "reviews", "menu_items"
   add_foreign_key "reviews", "users"
 end

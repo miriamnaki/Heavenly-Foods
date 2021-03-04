@@ -22,6 +22,12 @@
 <h6 class='label'>SHARE</h6>
 </div>
 
+<%# This is a review list  %>
+<% @reviews.each do |review|%>
+<%= display_stars(review)%>
+<%= review.body %>
+<% end %>
+
 <h2>ADD A REVIEW</h2>
 <%= form_with model:[@menu_item,@review], local: true do |f|%>
 
