@@ -23,6 +23,36 @@
 </div>
 
 <h2>ADD A REVIEW</h2>
+<%= form_with model:[@menu_item,@review], local: true do |f|%>
+
+
+<div class='form-group'>
+<%= f.label :rating,'Your rating'%>
+<%= f.select :rating,Array(1..5), class: 'form-control'%>
+<div>
+
+<div class='form-group'>
+<%= f.label :body,'Review'%>
+<%= f.text_area :body, cols: 50, rows: 5,class:'form-control'%>
+<div>
+
+<%# place name and email for user to submit with review %>
+<div class='form-group'>
+<%= f.label :first_name,'Name'%>
+<%= f.email_field :first_name, class:'form-control'%>
+</div>
+
+<div class='form-group'>
+<%= f.label :email%>
+<%= f.email_field :email,class:'form-control'%>
+</div>
+
+<div class='form-group'>
+<%= f.submit 'Submit', class:'btn btn-secondary cart'%>
+<div>
+<br>
+
+<%end%>
 
 
 </div>

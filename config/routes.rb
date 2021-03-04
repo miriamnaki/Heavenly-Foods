@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   get('/contact',{to:'contact#contact'})
   get('/reservation',{to:'reservation#reservation'})
 
-  resources :users
-  resources :menu_items
+  resources :menu_items do
+    resources :reviews
+  end
   resources :bookings
+  resources :users
+  resource :session
 
   
 end

@@ -15,14 +15,14 @@
  */
  @import 'bootstrap/scss/bootstrap';
 
- ul.nav li.dropdown:hover > ul.dropdown-menu {
-  display: block;    
-}
 .navbar{
   width: 100%;
   margin: 0px auto;
   position: relative;
   
+}
+ul.dropdown-menu {
+  position: absolute;
 }
 nav{
   color: black;
