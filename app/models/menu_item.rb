@@ -5,4 +5,6 @@ class MenuItem < ApplicationRecord
   has_many :reviews
   has_many :menu_item_tags
   has_many :tags, through: :menu_item_tags
+  
+  validates :image,presence: true
 end

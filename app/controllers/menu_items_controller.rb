@@ -5,6 +5,8 @@ class MenuItemsController < ApplicationController
 
   def create
     menu_item = MenuItem.new(menu_item_params)
+    category = Category.find_or_create_by(name: params[:category])
+    menu_item_category = MenuItemCategory.create(menu_item: menu_item,category:category)
     if menu_item.save
       redirect_to menu_item_path(menu_item)
     else
@@ -19,6 +21,7 @@ class MenuItemsController < ApplicationController
   def show
     @menu_item = MenuItem.find(params[:id])
     @review = Review.new
+    @shopping_cart_item = ShoppingCartItem.new
     @reviews = @menu_item.reviews.order(created_at: :desc)
 
   end

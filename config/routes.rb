@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :bookings
   resources :users
   resource :session
+  resources :shopping_cart_items
+  resources :categories
 
   
 end

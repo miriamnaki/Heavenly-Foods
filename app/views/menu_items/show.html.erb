@@ -10,23 +10,35 @@
 <p class='label'>$<%= @menu_item.price%></p>
 
 <div class='inline2'>
-<p class='label'>Quantity</p>
+<%= form_with model:@shopping_cart_item,local: true do |f|%>
+
+<%= f.hidden_field :menu_item_id, value: @menu_item.id%>
+<%= f.label :quantity%>
+<%= f.number_field :quantity, min:1%>
+
+<%= f.submit 'Add to cart'%>
+
+<%end%>
+
 </div>
 
-<div class='inline2'>
-<button class='btn btn-success cart'> ADD TO CART</button>
-</div>
+
 
 <h6 class='label'>CATEGORIES:</h6>
+<% @menu_item.categories.each do |category|%>
+<p>  <%= category.name%></p>
+<%end%>
 <h6 class='label'>TAGS:</h6>
 <h6 class='label'>SHARE</h6>
 </div>
 
+<div>
 <%# This is a review list  %>
 <% @reviews.each do |review|%>
 <%= display_stars(review)%>
 <%= review.body %>
 <% end %>
+</div>
 
 <h2>ADD A REVIEW</h2>
 <%= form_with model:[@menu_item,@review], local: true do |f|%>
@@ -45,12 +57,12 @@
 <%# place name and email for user to submit with review %>
 <div class='form-group'>
 <%= f.label :first_name,'Name'%>
-<%= f.email_field :first_name, class:'form-control'%>
+<%= f.text_field :first_name, class:'form-control', value: current_user.first_name%>
 </div>
 
 <div class='form-group'>
 <%= f.label :email%>
-<%= f.email_field :email,class:'form-control'%>
+<%= f.email_field :email,class:'form-control', value: current_user.email%>
 </div>
 
 <div class='form-group'>

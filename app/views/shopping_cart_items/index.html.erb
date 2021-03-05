@@ -1,0 +1,29 @@
+
+<table class='table table-striped'>
+<thead>
+<tr>
+<th>Item</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Subtotal</th>
+
+</tr>
+</thead>
+<tbody>
+<% @shopping_cart.shopping_cart_items.each do |item|%>
+<tr>
+<td><%= item.menu_item.title%></td>
+<td><%= item.menu_item.price%></td>
+<td><%= item.quantity%></td>
+<td><%= item.subtotal%></td>
+</tr>
+<%end%>
+
+<tr>
+<td>Total</td>
+<td></td>
+<td></td>
+<td> <%=@shopping_cart.subtotal%> </td>
+</tr>
+</tbody>
+</table>
