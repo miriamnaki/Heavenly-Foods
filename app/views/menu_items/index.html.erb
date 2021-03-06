@@ -2,13 +2,19 @@
 
  <h5>SHOP</h5>
 
+<select id ='menu_item_sort'>
+  <% menu_item_sort_options.each do |option| %>
+    <option data-href=<%= menu_item_sort_path(option.last) %> val=<%= option.last %> <%= 'selected' if @sort == option.last %>> 
+      <%= option.first %>
+    </option>
+  <% end %>
+</select>
 
-<div class="form-inline, form-group">
-<div>
-<%= label_tag 'search'%>
-</div>
- <%= text_field_tag 'search'%>
-
+<div class="form-inline form-group menu_item_search">
+  <div>
+    <%= label_tag 'search'%>
+  </div>
+  <%= text_field_tag 'search', '', id: 'menu_item_search_field' %>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
  </div>
 
@@ -38,7 +44,21 @@
       </div>
 
   
-
   <%end%>
   </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+  $('select#menu_item_sort').on('change', function(){
+    const selected = $('select#menu_item_sort option:selected');
+    window.location.href = selected.data('href')
+  })
+
+  $('.menu_item_search button').on('click',function(){
+    const search = $('#menu_item_search_field').val();
+    window.location.href = "/menu_items?search=" + search;
+  })
+})
+</script>

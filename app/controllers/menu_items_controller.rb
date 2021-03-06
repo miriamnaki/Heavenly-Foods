@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+  include MenuItemsHelper
   def new
     @menu_item = MenuItem.new
   end
@@ -15,7 +16,22 @@ class MenuItemsController < ApplicationController
   end
 
   def index
-    @menu_items = MenuItem.order(created_at: :desc)
+    @sort = params[:sort]
+      @search = params[:search]
+    if @sort
+      if @sort == 'price_asc'
+        @menu_items = MenuItem.order(price: :asc)
+      elsif @sort == 'price_desc'
+        @menu_items = MenuItem.order(price: :desc)
+      else
+        @menu_items = MenuItem.order(created_at: :desc)
+      end
+      
+    elsif @search
+      @menu_items = MenuItem.where("title like ?", "")
+    else
+      @menu_items = MenuItem.order(created_at: :desc)
+    end
   end
 
   def show
@@ -35,7 +51,7 @@ class MenuItemsController < ApplicationController
 
   def update
   end
-  
+
 
   private
   def menu_item_params
