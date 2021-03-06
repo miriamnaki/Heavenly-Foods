@@ -1,6 +1,8 @@
 // Place all the styles related to the menu_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body.menu_items{
+
 
 .menu_item_image{
   max-width: 100%;
@@ -15,11 +17,19 @@
 .label{
   font-family: 'Shippori Mincho', serif;
   margin-left: 10%;
+  font-size: 20px;
+}
+#price{
+  font-size: 25px;
+}
+#quantity{
+  max-width: 20%;
 }
 .title2{
   font-family: 'Shippori Mincho', serif;
   margin-left: 10%;
   margin-top:10px;
+  font-size: 40px;
 }
 
 div.inline{
@@ -40,4 +50,52 @@ div.inline2{
   width: 200px;
   background-color: goldenrod !important;
 }
+.btn-primary:hover,
+  .btn-primary,
+      .btn-primary:active,
+      .btn-primary:visited,
+      .btn-primary:focus {
+        background-color: goldenrod !important;
+        border-color: goldenrod !important;
+        
+  }
+  .fab.fa-facebook-f{
+    color: goldenrod !important;
+    
+  }
+  .fab.fa-twitter {
+    color: goldenrod !important;
+    
+  }
+  .fab.fa-instagram{
+    color: goldenrod !important;
 
+  }
+
+  .form-group{
+    max-width: 500px;
+  }
+  
+  .review_title{
+    color: goldenrod !important;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .form-control{
+    outline-color: goldenrod !important;
+  }
+  
+    .btn-outline-primary:hover,
+    .btn-outline-primary,
+    .btn-primary,
+    .btn-outline-primary:active,
+    .btn-outline-primary:visited,
+    .btn-outline-primary:focus {
+      background-color: goldenrod !important;
+      border-color: goldenrod !important;
+      color:white;
+      // width: 40%;
+  }
+
+}

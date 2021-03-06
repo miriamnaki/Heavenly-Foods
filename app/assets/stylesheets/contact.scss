@@ -1,6 +1,7 @@
 // Place all the styles related to the contact controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body.contact{
 .form-group{
   max-width: 500px;
 }
@@ -29,5 +30,6 @@
     border-color: goldenrod !important;
     color:white;
     // width: 40%;
+}
 }
 

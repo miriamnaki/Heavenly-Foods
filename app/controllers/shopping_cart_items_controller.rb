@@ -1,7 +1,7 @@
 class ShoppingCartItemsController < ApplicationController
   def create
-    shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
     shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
+    shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
     shopping_cart_item.shopping_cart = shopping_cart
     if shopping_cart_item.save
       redirect_to shopping_cart_items_path
@@ -9,13 +9,17 @@ class ShoppingCartItemsController < ApplicationController
       redirect_to menu_item_path(shopping_cart_item.menu_item)
     end
   end
-
+  
   def index
     @shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
   end
   def update
   end
   def destroy
+    @shopping_cart_item = ShoppingCartItem.find params[:id]
+    
+    @shopping_cart_item.destroy
+    redirect_to shopping_cart_items_path
   end
   private
   def shopping_cart_item_params

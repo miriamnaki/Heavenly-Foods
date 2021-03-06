@@ -9,15 +9,16 @@
  </li>
  <%end%>
  </div>
+
   <div class="row">
     <% @menu_items.each do |item|%>
 
       <div class='col-4'> 
             <% if item.image.attached?%>
-            <%= image_tag(item.image,class:'menu_item_image') %>
+            <%= image_tag(item.image,class:'menu_item_image show') %>
             <%end%>
         <div class='col-4'> 
-            <h3 class=title><%= item.title%></h3>
+            <h3 class=title> <%= link_to item.title, menu_item_path(item)%></h3>
         </div>
 
         <div class='col-4'> 

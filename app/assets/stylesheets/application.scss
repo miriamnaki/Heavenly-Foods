@@ -14,15 +14,17 @@
  *= require_self
  */
  @import 'bootstrap/scss/bootstrap';
+ body{
 
+ ul.nav li.dropdown:hover > ul.dropdown-menu {
+  display: block;    
+  position: absolute;
+}
 .navbar{
   width: 100%;
   margin: 0px auto;
   position: relative;
   
-}
-ul.dropdown-menu {
-  position: absolute;
 }
 nav{
   color: black;
@@ -32,11 +34,14 @@ nav{
 .address{
   background-color: lightslategray;
   color: black;
+  
 
 }
 footer{
   background-color: black;
   color: white;
+  
+    
 }
 
 .fas.fa-map-marker-alt{
@@ -48,4 +53,5 @@ footer{
 .fas.fa-phone{
   font-size:20px;
 }
+ }
 

@@ -1,7 +1,10 @@
-
+<div class='container'>
+<%  if @shopping_cart.shopping_cart_items %>
+<h3>CART</h3>
 <table class='table table-striped'>
 <thead>
 <tr>
+<th></th>
 <th>Item</th>
 <th>Price</th>
 <th>Quantity</th>
@@ -12,6 +15,8 @@
 <tbody>
 <% @shopping_cart.shopping_cart_items.each do |item|%>
 <tr>
+<td><%= link_to("X",shopping_cart_item_path(item),method: :delete, data:{confirm:"Delete item?"} )%></td>
+
 <td><%= item.menu_item.title%></td>
 <td><%= item.menu_item.price%></td>
 <td><%= item.quantity%></td>
@@ -23,7 +28,14 @@
 <td>Total</td>
 <td></td>
 <td></td>
+<td></td>
 <td> <%=@shopping_cart.subtotal%> </td>
 </tr>
 </tbody>
 </table>
+
+<br><br><br><br><br><br><br><br><br>
+<% else %>
+<h6>You dont have any items in your cart</h6>
+<% end %>
+</div>

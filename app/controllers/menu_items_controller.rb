@@ -27,6 +27,7 @@ class MenuItemsController < ApplicationController
   end
 
   def destroy
+    
   end
 
   def edit

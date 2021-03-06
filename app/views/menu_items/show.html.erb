@@ -6,53 +6,62 @@
 
 <div class='inline'>
 <h1 class='title2'><%= @menu_item.title %></h1>
+<p class='label' id='price'>$<%= @menu_item.price%></p>
 <p class='label'><%= @menu_item.description%></p>
-<p class='label'>$<%= @menu_item.price%></p>
 
 <div class='inline2'>
 <%= form_with model:@shopping_cart_item,local: true do |f|%>
 
 <%= f.hidden_field :menu_item_id, value: @menu_item.id%>
-<%= f.label :quantity%>
-<%= f.number_field :quantity, min:1%>
+<%  f.label :quantity%>
+<%= f.number_field :quantity, min:1,value:1,class:'label',id:'quantity'%>
 
-<%= f.submit 'Add to cart'%>
+<%= f.submit 'ADD TO CART',class:'btn btn-primary'%>
 
 <%end%>
-
+<br>
 </div>
 
 
+<br>
 
-<h6 class='label'>CATEGORIES:</h6>
 <% @menu_item.categories.each do |category|%>
-<p>  <%= category.name%></p>
+<h6  class='label'>CATEGORIES: <%= category.name%></h6>
 <%end%>
-<h6 class='label'>TAGS:</h6>
-<h6 class='label'>SHARE</h6>
+
+<h6 class='label'>SHARE: <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
+ <a href="https://twitter.com/login?lang=en/"> <i class="fab fa-twitter "></i></a>
+ <a href="https://www.instagram.com/accounts/login/"> <i class="fab fa-instagram"> </i></a>
+ </h6>
+</div>
+
+
+<%# This is a review list  %>
+<% @reviews.each do |review|%>
+<div>
+<%= display_stars(review)%>
 </div>
 
 <div>
-<%# This is a review list  %>
-<% @reviews.each do |review|%>
-<%= display_stars(review)%>
 <%= review.body %>
-<% end %>
 </div>
+<% end %>
 
-<h2>ADD A REVIEW</h2>
+
+<br>
+<h2 class='review_title'>ADD A REVIEW</h2>
 <%= form_with model:[@menu_item,@review], local: true do |f|%>
 
 
 <div class='form-group'>
 <%= f.label :rating,'Your rating'%>
 <%= f.select :rating,Array(1..5), class: 'form-control'%>
-<div>
+</div>
 
 <div class='form-group'>
 <%= f.label :body,'Review'%>
 <%= f.text_area :body, cols: 50, rows: 5,class:'form-control'%>
-<div>
+</div>
 
 <%# place name and email for user to submit with review %>
 <div class='form-group'>
@@ -67,7 +76,7 @@
 
 <div class='form-group'>
 <%= f.submit 'Submit', class:'btn btn-secondary cart'%>
-<div>
+</div>
 <br>
 
 <%end%>
