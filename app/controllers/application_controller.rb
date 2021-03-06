@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  def redirect_unless_signed_in
+    redirect_to new_session_path unless current_user
+  end
 end

@@ -66,12 +66,12 @@
 <%# place name and email for user to submit with review %>
 <div class='form-group'>
 <%= f.label :first_name,'Name'%>
-<%= f.text_field :first_name, class:'form-control', value: current_user.first_name%>
+<%= f.text_field :first_name, class:'form-control', value: current_user&.first_name%>
 </div>
 
 <div class='form-group'>
 <%= f.label :email%>
-<%= f.email_field :email,class:'form-control', value: current_user.email%>
+<%= f.email_field :email,class:'form-control', value: current_user&.email%>
 </div>
 
 <div class='form-group'>

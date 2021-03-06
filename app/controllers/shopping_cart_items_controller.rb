@@ -1,4 +1,5 @@
 class ShoppingCartItemsController < ApplicationController
+  before_action :redirect_unless_signed_in
   def create
     shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
     shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)

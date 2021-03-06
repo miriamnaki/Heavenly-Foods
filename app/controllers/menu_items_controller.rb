@@ -23,12 +23,14 @@ class MenuItemsController < ApplicationController
         @menu_items = MenuItem.order(price: :asc)
       elsif @sort == 'price_desc'
         @menu_items = MenuItem.order(price: :desc)
+      elsif @sort == "most_reviewed"
+        @menu_items = MenuItem.joins(:reviews).group(:id).order("COUNT(reviews.id) DESC")
       else
         @menu_items = MenuItem.order(created_at: :desc)
       end
       
     elsif @search
-      @menu_items = MenuItem.where("title like ?", "")
+      @menu_items = MenuItem.where("title like ?", "%#{@search}%")
     else
       @menu_items = MenuItem.order(created_at: :desc)
     end
