@@ -1,3 +1,16 @@
 // Place all the styles related to the shopping_cart_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body.shopping_cart_items{
+  .btn-primary:hover,
+  .btn-primary,
+      .btn-primary:active,
+      .btn-primary:visited,
+      .btn-primary:focus {
+        background-color: goldenrod !important;
+        border-color: goldenrod !important;
+        
+        
+        
+  }
+}

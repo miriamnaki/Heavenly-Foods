@@ -35,6 +35,7 @@ class MenuItemsController < ApplicationController
 
   def update
   end
+  
 
   private
   def menu_item_params

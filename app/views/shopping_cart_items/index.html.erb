@@ -34,8 +34,17 @@
 </tbody>
 </table>
 
+<div class='d-flex float-right'>
+<button class='btn btn-primary'> <%= link_to "CONTINUE SHOPPING", menu_items_path %>  </button>
+</div>
+ <br><br>
+<div class='d-flex float-right'>
+<button class='btn btn-primary'> <%= link_to "PROCEED TO CHECKOUT", menu_items_path %>  </button>
+</div>
 <br><br><br><br><br><br><br><br><br>
 <% else %>
-<h6>You dont have any items in your cart</h6>
+<h6>You dont  have any items in your cart</h6>
 <% end %>
+
+
 </div>

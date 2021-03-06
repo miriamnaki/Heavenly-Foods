@@ -2,11 +2,22 @@
 
  <h5>SHOP</h5>
 
- <div>
+
+<div class="form-inline, form-group">
+<div>
+<%= label_tag 'search'%>
+</div>
+ <%= text_field_tag 'search'%>
+
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+ </div>
+
+ <div class='categories'>
+ CATEGORIES: 
  <% Category.all.each do |category|%>
- <li>
- <%= link_to category.name,category_path(category) %>
- </li>
+ <span>
+ <%= link_to category.name,category_path(category) %>,
+ </span>
  <%end%>
  </div>
 
@@ -22,7 +33,7 @@
         </div>
 
         <div class='col-4'> 
-            <h4 class='title'>$<%= item.price%></h4>
+            <h4 class='title'><%= link_to  item.price, menu_item_path(item)%></h4>
         </div>
       </div>
 
