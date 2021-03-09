@@ -7,16 +7,22 @@ body.menu_items{
 .menu_item_image{
   max-width: 100%;
   margin-top: 10%;
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .title{
   font-family: 'Shippori Mincho', serif;
   margin-left: 100%;
-  color:goldenrod;
+  color:goldenrod !important;
+  
+  white-space: nowrap;
+  
   
 }
 .label{
   font-family: 'Shippori Mincho', serif;
-  margin-left: 10%;
   font-size: 20px;
 }
 #price{
@@ -25,7 +31,7 @@ body.menu_items{
 #quantity{
   max-width: 20%;
 }
-.title2{
+.new_item_title{
   font-family: 'Shippori Mincho', serif;
   margin-left: 10%;
   margin-top:10px;
@@ -36,12 +42,7 @@ div.inline{
   display: inline-block;
   vertical-align: top;
 }
-.show{
-  // width: 400px;
-  // height: 400px;
-  // margin-top: 10px;
-  // margin-bottom: 10px;   
-  }
+
 div.inline2{
   display: inline-block; 
 }
@@ -85,7 +86,6 @@ div.inline2{
   .form-control{
     outline-color: goldenrod !important;
   }
-  
     .btn-outline-primary:hover,
     .btn-outline-primary,
     .btn-primary,
@@ -101,4 +101,53 @@ div.inline2{
     text-align: right;
   }
 
+  .menu_item_delete{
+    margin-left: 28%;
+    color:goldenrod;
+  }
+  select {
+    border-radius: 3px;
+    border:solid goldenrod;
+    width: 120px;
+    height: 30px;
+    color: #000;
+  }
+  // .search{
+  //   border-radius: 3px;
+  //   border:solid goldenrod;
+  //   color: #000;
+
+  // }
+  .search-container {
+    background-color: goldenrod;
+    position: relative;
+    border-radius: 30px;
+    padding: 3px 50px 3px 10px;
+  }
+  .search-box {
+    background-color: transparent;
+    outline: none;
+    height: 35px;
+    font-size: 15px;
+    border:  goldenrod;
+    width: 100%;
+  }
+  .search-button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-color: #C00;
+    border-radius: 50%;
+    border: 0;
+    color: #FFF;
+    width: 35px;
+    height: 35px;
+    outline: 0;
+  }
+  
+  
+  
+  
+  
+  
 }

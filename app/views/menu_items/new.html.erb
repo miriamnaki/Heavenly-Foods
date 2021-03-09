@@ -1,7 +1,10 @@
 <div class='container'>
 
-<h3 class='title2'>upload your menu item</h3>
-<%= form_with model:@menu_item, local: true do |f|%>
+<h3 class='new_item_title'>upload your menu item</h3>
+<%= form_for @menu_item, local: true do |f|%>
+<% if @menu_item.errors.present?%>
+<%= @menu_item.errors.full_messages.join(', ')%>
+<%end%>
 
 <div class='form-group mt-3'>
 <%= f.label :title,class:'label' %>
@@ -24,8 +27,17 @@
 <%= f.file_field :image%>
 </div>
 
+<div>
  <%= label_tag 'category'%>
  <%= text_field_tag 'category'%>
+ </div>
+
+
+ <div class='form-group'>
+ <%= label_tag :'Menu Type'%>
+ <%= f.select :menutype_id, Menutype.all.map {|m| [m.menutype,m.id]} %>
+ </div>
+
 <div class='form-group'>
 <%= f.submit 'UPLOAD' ,class:'btn btn-primary'%>
 </div>

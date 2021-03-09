@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get('/gallery',{to:'gallery#gallery'})
   get('/contact',{to:'contact#contact'})
   get('/reservation',{to:'reservation#reservation'})
+  get('/allmenu',{to:'menu_items#allmenu'})
 
   resources :menu_items do
     resources :reviews
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resource :session
   resources :shopping_cart_items
   resources :categories
+  resources :menutypes
 
   
 end

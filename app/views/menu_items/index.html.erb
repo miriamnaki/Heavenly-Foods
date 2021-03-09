@@ -1,22 +1,32 @@
  <div class='container'>
-
+<br>
  <h5>SHOP</h5>
+<div class='d-flex justify-content-between'>
+  <div class="form-inline form-group menu_item_search inline search-container">
+       <%= text_field_tag 'search', '', id: 'menu_item_search_field', class:'search-box',placeholder:'Search...' %>
+       <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
+  </div>
 
-<select id ='menu_item_sort'>
+<div class='justify-content-right'>
+<div class='inline'>
+<h6 class='mt-2'>SORT</h6>
+</div>
+
+<div class='inline'>
+<select id ='menu_item_sort'> 
   <% menu_item_sort_options.each do |option| %>
     <option data-href=<%= menu_item_sort_path(option.last) %> val=<%= option.last %> <%= 'selected' if @sort == option.last %>> 
       <%= option.first %>
     </option>
   <% end %>
 </select>
+</div>
+</div>
 
-<div class="form-inline form-group menu_item_search">
-  <div>
-    <%= label_tag 'search'%>
-  </div>
-  <%= text_field_tag 'search', '', id: 'menu_item_search_field' %>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
- </div>
+</div>
+
+
+
 
  <div class='categories'>
  CATEGORIES: 
@@ -32,14 +42,18 @@
 
       <div class='col-4'> 
             <% if item.image.attached?%>
-            <%= image_tag(item.image,class:'menu_item_image show') %>
+            <%= image_tag(item.image,class:'menu_item_image') %>
             <%end%>
         <div class='col-4'> 
-            <h3 class=title> <%= link_to item.title, menu_item_path(item)%></h3>
+            <h4> <%= link_to item.title, menu_item_path(item),class:'title'%></h4>
         </div>
 
         <div class='col-4'> 
-            <h4 class='title'><%= link_to  item.price, menu_item_path(item)%></h4>
+            <h6><%= link_to  item.price, menu_item_path(item), class:'title'%></h6>
+        </div>
+        
+        <div>
+        <%= link_to("DELETE", menu_item_path(item),method: :delete, data:{confrim:'Delete item?'},class:'menu_item_delete')%>
         </div>
       </div>
 

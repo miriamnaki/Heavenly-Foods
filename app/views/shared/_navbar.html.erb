@@ -28,9 +28,10 @@
           MENU
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Appetizers</a>
-          <a class="dropdown-item" href="#">Main Course</a>
-          <a class="dropdown-item" href="#">Desserts</a>
+          <%= link_to "Appetizers", menutypes_path, class:"dropdown-item"%> 
+          <%= link_to "Main Course", menutypes_path, class:"dropdown-item"%> 
+          <%= link_to "Desserts", menutypes_path, class:"dropdown-item"%> 
+          
         </div>
       </li>
 
@@ -54,7 +55,7 @@
       <% if current_user %>
       <li>
         <i class="fa fa-shopping-cart"></i>
-        <span> <%= current_user.shopping_cart_items_count%></span>
+        <span class='badge badge-warning' id='lblCartCount'> <%= current_user.shopping_cart_items_count%></span>
       </li>
       <%end%>
     </ul>

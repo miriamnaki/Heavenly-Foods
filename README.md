@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+//this raises an error when the user logs in
+* <% if current_user %>
+      <li>
+        <i class="fa fa-shopping-cart"></i>
+        <span> <%= current_user.shopping_cart_items_count%></span>
+      </li>
+
+      category snack causes an error when clicked

@@ -1,0 +1,53 @@
+// Place all the styles related to the menutypes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body.menutypes{
+.menu-type-title{
+  font-size: 35px;
+  font-weight: bolder;
+  font-family: 'Shippori Mincho', serif;
+  text-align: center;
+}
+.menu-item-title{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Shippori Mincho', serif;
+  
+  
+
+}
+.menu-item-price{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Shippori Mincho', serif;
+
+}
+.menu-item-description{
+  font-size: 20px;
+  font-family: 'Shippori Mincho', serif;
+  
+
+}
+.flex-item{
+  background-color: tomato;
+}
+.inline{
+  display: inline;
+}
+.menu-item-items-attributes{
+  min-height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  background-color: goldenrod;
+  
+}
+.stars{
+  margin-top: 30px;
+}
+#item-description{
+  background-color:peachpuff;
+}
+
+  
+}

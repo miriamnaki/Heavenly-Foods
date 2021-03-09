@@ -9,7 +9,9 @@ class MenuItemsController < ApplicationController
     category = Category.find_or_create_by(name: params[:category])
     menu_item_category = MenuItemCategory.create(menu_item: menu_item,category:category)
     if menu_item.save
+      flash[:notice]="item created successfully."
       redirect_to menu_item_path(menu_item)
+            
     else
       redirect_to new_menu_item_path
     end
@@ -45,6 +47,9 @@ class MenuItemsController < ApplicationController
   end
 
   def destroy
+    @menu_item = MenuItem.find(params[:id])
+    @menu_item.destroy
+    redirect_to menu_items_path
     
   end
 
@@ -57,6 +62,6 @@ class MenuItemsController < ApplicationController
 
   private
   def menu_item_params
-    params.require(:menu_item).permit(:title,:description,:price,:image)
+    params.require(:menu_item).permit(:title,:description,:price,:image,:menutype_id,:category)
   end
 end
