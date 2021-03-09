@@ -1,7 +1,7 @@
 <div class = 'container'>
 
 <br>
-<%# <div>
+<div>
 <h6>Location</h6>
 <br>
 <iframe
@@ -13,12 +13,11 @@
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC-jAtWU8cRxEAi1kKH1CbysiE39WNi3Ok
     &q=Code+Core,Newestminster+Va">
 </iframe>
-</div> %>
+</div>
 
 
 
-<style>
- 
+<%# <style>
   #map {
     width:"600";
     height:"450";
@@ -34,7 +33,6 @@
 <div id="map"></div>
 
 <script type="text/javascript">
-
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -45,8 +43,8 @@ function initMap() {
 </script>
 
 <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-jAtWU8cRxEAi1kKH1CbysiE39WNi3Ok&callback=initMap" async defer>
-</script>
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-jAtWU8cRxEAi1kKH1CbysiE39WNi3Ok&callback=initMap" async defer>
+</script> %>
 
 
 <br>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get('/gallery',{to:'gallery#gallery'})
   get('/contact',{to:'contact#contact'})
   get('/reservation',{to:'reservation#reservation'})
-  get('/allmenu',{to:'menu_items#allmenu'})
+  
 
   resources :menu_items do
     resources :reviews
@@ -15,9 +15,14 @@ Rails.application.routes.draw do
   resources :bookings
   resources :users
   resource :session
-  resources :shopping_cart_items
+  resources :shopping_cart_items do
+    collection do
+      get 'final_order'
+    end
+  end
   resources :categories
   resources :menutypes
+  resources :billings, only:[:new,:create]
 
   
 end

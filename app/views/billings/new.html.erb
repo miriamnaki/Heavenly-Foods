@@ -1,0 +1,90 @@
+<div class='container'>
+
+<br>
+
+<div class='row'>
+<div class='col-6'>
+
+<h4>BILLING DETAILS</h4>
+<div class='card-text jumbotron'>
+<div class='content'>
+<%= form_with model:@billing, local: true do |f|%>
+
+<% if @billing.errors.present? %>
+<%= @billing.errors.full_messages.join('')%>
+<% end%>
+ 
+ 
+ <div class= 'form-group'>
+ <%= f.label :first_name, 'First Name'%>
+ <%= f.text_field :first_name, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :last_name, 'Last Name'%>
+ <%= f.text_field :last_name, class:'form-control'%>
+</div>
+
+
+ <div class= 'form-group'>
+ <%= f.label :country, 'Country'%>
+ <%= f.text_field :country, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :street_address, 'Street Address'%>
+ <%= f.text_field :street_address, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :unit, 'Unit#'%>
+ <%= f.number_field :unit, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :city,'City'%>
+ <%= f.text_field :city, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :province,'Province'%>
+ <%= f.text_field :province, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :postal_code,'Postal Code'%>
+ <%= f.text_field :postal_code, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :phone,'Phone'%>
+ <%= f.number_field :phone, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.label :email,'Email'%>
+ <%= f.text_field :email, class:'form-control'%>
+</div>
+
+ <div class= 'form-group'>
+ <%= f.submit 'PROCEED TO PAYMENT',class:'btn btn-primary'%>
+</div>
+
+<% end%>
+ </div>
+ </div>
+
+ </div>
+
+
+ <div class='col-6'>
+ <h4>ADDITIONAL INFORMATION</h4>
+ <div class='form-group additional-info'>
+ <%= label_tag 'Special Instructions'%>
+ <%= text_area_tag 'Special Instructions','',class:'form-control',placeholder:'Eg: instruction for the kitchen, delivery instruction'%>
+ </div>
+ </div>
+
+
+</div>
+</div>

@@ -1,22 +1,3 @@
-<div class='container'>
-<% if @menu_item_category == 'appetizer'%>
-<% @menu_items.each do |item|%>
 
-    
-      <div class='col-4'> 
-            <h3 class=title>  <%=item.title%></h3>
-        <div class='col-4'> 
-        </div>
-            <h3 class=title> <%= item.description%></h3>
-
-        <div class='col-4'> 
-            <h4 class='title'><%= item.price%></h4>
-        </div>
-      </div>
 
   
-
-  <%end%>
-
-<%end%>
-</div>

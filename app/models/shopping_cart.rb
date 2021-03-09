@@ -9,4 +9,14 @@ class ShoppingCart < ApplicationRecord
     end
     return total
   end
+
+  def final_total
+    final_total = 0
+    shopping_cart_items.all do |item|
+      final_total = item.subtotal + item.tax + item.delivery_fee
+    end
+      return final_total
+  end
+
+
 end

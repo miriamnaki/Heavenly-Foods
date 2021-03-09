@@ -14,6 +14,8 @@ class ShoppingCartItemsController < ApplicationController
   def index
     @shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
   end
+
+  
   def update
   end
   def destroy
@@ -22,6 +24,11 @@ class ShoppingCartItemsController < ApplicationController
     @shopping_cart_item.destroy
     redirect_to shopping_cart_items_path
   end
+
+  def final_order
+    @shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
+  end
+
   private
   def shopping_cart_item_params
     params.require(:shopping_cart_item).permit(:quantity,:menu_item_id)
