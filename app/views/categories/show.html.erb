@@ -12,18 +12,20 @@
   <div class="row">
     <% @menu_item_categories.each do |menu_item_category|%>
       <% item = menu_item_category.menu_item%>
-      <div class='col-4'> 
-            <% if item.image.attached?%>
-            <%= image_tag(item.image,class:'menu_item_image') %>
-            <%end%>
-        <div class='col-4'> 
-            <h3 class=title><%= item.title%></h3>
-        </div>
+      <% if item %>
+            <div class='col-4'> 
+                  <% if item.image.attached?%>
+                  <%= image_tag(item.image,class:'menu_item_image') %>
+                  <%end%>
+              <div class='col-4'> 
+                  <h3 class=title><%= item.title%></h3>
+              </div>
 
-        <div class='col-4'> 
-            <h4 class='title'>$<%= item.price%></h4>
-        </div>
-      </div>
+              <div class='col-4'> 
+                  <h4 class='title'>$<%= item.price%></h4>
+              </div>
+            </div>
+        <%end%>
 
   
 

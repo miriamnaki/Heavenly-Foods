@@ -52,10 +52,16 @@
 <h2 class='review_title'>ADD A REVIEW</h2>
 <%= form_with model:[@menu_item,@review], local: true do |f|%>
 
-
-<div class='form-group'>
+<div>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+<i class="far fa-star"></i>
+</div>
+<div class='form-group d-none'>
 <%= f.label :rating,'Your rating'%>
-<%= f.select :rating,Array(1..5), class: 'form-control'%>
+<%= f.select :rating,Array(1..5), class: 'form-control '%>
 </div>
 
 <div class='form-group'>
@@ -83,3 +89,22 @@
 
 
 </div>
+
+<script type='text/javascript'>
+   $('.fa-star').on('click',function(){
+     var allStars = $('.fa-star')
+     for (var i = 0; i < allStars.length+1; i++) {
+       $(allStars[i]).removeClass('fas');
+       if (!$(allStars[i]).hasClass('far')) {
+        $(allStars[i]).addClass('far');
+       }
+     }
+
+     for (var i = 0; i < $(this).index()+1; i++) {
+       $(allStars[i]).removeClass('far');
+       $(allStars[i]).addClass('fas');
+     }
+     $('#review_rating').val($(this).index() + 1);
+   })
+
+</script>

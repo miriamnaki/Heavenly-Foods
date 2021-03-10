@@ -1,6 +1,12 @@
  <div class='container'>
 <br>
  <h5>SHOP</h5>
+
+ <%= range_field_tag 'price', nil, min:0, max:100, oninput:'this.nextElementSibling.value = this.value',value:0 %>
+ <output>
+ 0
+ </output>
+
 <div class='d-flex justify-content-between'>
   <div class="form-inline form-group menu_item_search inline search-container">
        <%= text_field_tag 'search', '', id: 'menu_item_search_field', class:'search-box',placeholder:'Search...' %>
@@ -37,28 +43,8 @@
  <%end%>
  </div>
 
-  <div class="row">
-    <% @menu_items.each do |item|%>
-
-      <div class='col-4'> 
-            <% if item.image.attached?%>
-            <%= image_tag(item.image,class:'menu_item_image') %>
-            <%end%>
-        <div class='col-4'> 
-            <h4> <%= link_to item.title, menu_item_path(item),class:'title'%></h4>
-        </div>
-
-        <div class='col-4'> 
-            <h6><%= link_to  item.price, menu_item_path(item), class:'title'%></h6>
-        </div>
-        
-        <div>
-        <%= link_to("DELETE", menu_item_path(item),method: :delete, data:{confrim:'Delete item?'},class:'menu_item_delete')%>
-        </div>
-      </div>
-
-  
-  <%end%>
+  <div id="menu-items-container" class="row">
+    <%= render partial: 'menu_items', locals: { menu_items: @menu_items } %>
   </div>
 </div>
 
@@ -74,5 +60,14 @@ $(document).ready(function(){
     const search = $('#menu_item_search_field').val();
     window.location.href = "/menu_items?search=" + search;
   })
+
+  $('#price').on('change', function() {
+  
+    $.get(window.location.pathname + '/price_search?query=' + this.value).then(function(template) {
+      var $container = $('#menu-items-container');
+      $container.html(template);
+    })
+  })
 })
 </script>
+

@@ -1,0 +1,40 @@
+<div class='container'>
+ <%= form_with model:@payment, local: true, do |f|%>
+
+ <% if @payment.errors.present?%>
+ <%= @payment.errors.full_messages%>
+ <%end%>
+
+ <div class='form-group'> 
+ <%= f.label :first_name,'First Name on card'%>
+ <%= f.text_field :first_name, class:'form-control'%>
+ </div>
+
+ <div class='form-group'> 
+ <%= f.label :last_name,'Last Name on card'%>
+ <%= f.text_field :last_name, class:'form-control'%>
+ </div>
+
+ <div class='form-group'> 
+ <%= f.label :card_number,'Number on Card'%>
+ <%= f.number_field :card_number, class:'form-control'%>
+ </div>
+
+ <div class='form-group'> 
+ <%= f.label :expiry_date,'Expiry Date'%>
+ <%= f.date_field :expiry_date, class:'form-control'%>
+ </div>
+
+ <div class='form-group'> 
+ <%= f.label :security_code,'Security caide'%>
+ <%= f.date_field :security_code, class:'form-control'%>
+ </div>
+
+ <div class='form-group'> 
+ <%= f.submit 'PLACE ORDER', class:'btn btn-primary'%>
+ </div>
+ <%end%>
+
+ <div class='btn btn-primary'>CANCEL</div>
+
+</div>

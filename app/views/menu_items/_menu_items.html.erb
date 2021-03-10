@@ -1,0 +1,21 @@
+<% menu_items.each do |item|%>
+
+      <div class='col-4'> 
+            <% if item.image.attached?%>
+            <%= image_tag(item.image,class:'menu_item_image') %>
+            <%end%>
+        <div class='col-4'> 
+            <h4> <%= link_to item.title, menu_item_path(item),class:'title'%></h4>
+        </div>
+
+        <div class='col-4'> 
+            <h6><%= link_to  item.price, menu_item_path(item), class:'title'%></h6>
+        </div>
+        
+        <div>
+        <%= link_to("DELETE", menu_item_path(item),method: :delete, data:{confrim:'Delete item?'},class:'menu_item_delete')%>
+        </div>
+      </div>
+
+  
+  <%end%>

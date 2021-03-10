@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :menu_items do
     resources :reviews
+    collection do
+      get 'price_search'
+    end
   end
   resources :bookings
   resources :users
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :menutypes
   resources :billings, only:[:new,:create]
+  resources :payments, only:[:new,:create]
 
   
 end

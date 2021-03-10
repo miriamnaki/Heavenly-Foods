@@ -59,6 +59,11 @@ class MenuItemsController < ApplicationController
   def update
   end
 
+  def price_search
+    @menu_items = MenuItem.where("price <= ?", params[:query])
+    render partial: 'menu_items/menu_items', locals: { menu_items: @menu_items }, layout: false
+  end
+
 
   private
   def menu_item_params
