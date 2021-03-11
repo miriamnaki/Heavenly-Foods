@@ -1,8 +1,8 @@
 <div class='container'>
 
-<div class='inline'>
-<%= image_tag(@menu_item.image,class:'menu_item_image') %>
-</div>
+  <div class='inline'>
+    <%= image_tag(@menu_item.image,class:'menu_item_image') %>
+  </div>
 
 <div class='inline'>
 <h1 class='title2'><%= @menu_item.title %></h1>
@@ -39,18 +39,32 @@
 <%# This is a review list  %>
 <% @reviews.each do |review|%>
 <div>
-<%= display_stars(review)%>
+    <%= review.user&.first_name || "DELETED" %> says 
 </div>
+  <div>
+    <%= display_stars(review)%>
+  </div>
 
-<div>
-<%= review.body %>
-</div>
+  <div>
+    <%= review.body %>
+  </div>
+
+  
+
+  <% if can? :crud,review %>
+<%= link_to "Delete",menu_item_review_path(@menu_item,review), method: :delete,data: {confirm: "Delete review?"} %>
+
+  <% end%>
 <% end %>
 
 
 <br>
 <h2 class='review_title'>ADD A REVIEW</h2>
 <%= form_with model:[@menu_item,@review], local: true do |f|%>
+
+<% if @review.errors.present?%>
+    <%= @review.errors.full_messages.join(', ')%>
+<%end%>
 
 <div>
 <i class="far fa-star"></i>

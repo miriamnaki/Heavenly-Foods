@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params.merge(user: current_user))
     if booking.save
+      flash[:notice] = 'Your table has been saved'
       redirect_to root_path
 
     else

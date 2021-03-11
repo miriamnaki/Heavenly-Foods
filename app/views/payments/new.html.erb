@@ -1,8 +1,8 @@
 <div class='container'>
- <%= form_with model:@payment, local: true, do |f|%>
+ <%= form_with model:@payment, local: true do |f|%>
 
  <% if @payment.errors.present?%>
- <%= @payment.errors.full_messages%>
+ <%= @payment.errors.full_messages.join(', ')%>
  <%end%>
 
  <div class='form-group'> 
@@ -26,8 +26,8 @@
  </div>
 
  <div class='form-group'> 
- <%= f.label :security_code,'Security caide'%>
- <%= f.date_field :security_code, class:'form-control'%>
+ <%= f.label :security_code,'Security Code'%>
+ <%= f.number_field :security_code, class:'form-control'%>
  </div>
 
  <div class='form-group'> 

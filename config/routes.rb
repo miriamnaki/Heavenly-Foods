@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   resources :menutypes
   resources :billings, only:[:new,:create]
   resources :payments, only:[:new,:create]
-
-  
+  get '/card/new' => 'billings#new_card', as: :add_payment_method
+  post "/card" => "billings#create_card", as: :create_payment_method
+  get '/success' => 'billings#success', as: :success
+  get '/pay' => 'billings#pay', as: :pay
 end

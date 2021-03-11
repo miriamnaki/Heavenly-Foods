@@ -73,4 +73,8 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # Stripe configuration
+  config.stripe.secret_key = Figaro.env.stripe_secret_key
+  config.stripe.publishable_key = Figaro.env.stripe_publishable_key
 end

@@ -5,6 +5,7 @@ class ShoppingCartItemsController < ApplicationController
     shopping_cart_item = ShoppingCartItem.new(shopping_cart_item_params)
     shopping_cart_item.shopping_cart = shopping_cart
     if shopping_cart_item.save
+      flash[:notice] ='Item added to cart'
       redirect_to shopping_cart_items_path
     else
       redirect_to menu_item_path(shopping_cart_item.menu_item)

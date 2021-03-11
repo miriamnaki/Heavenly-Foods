@@ -2,13 +2,14 @@
 <br>
 <%= form_for :menutype, url: menutypes_path do |f| %>
 
-<div class='form-group'>
-<%=f.label :menutype%>
-<%= f.text_field :menutype, class:'form-group'%>
-</div>
 
-<div class ='form-group'>
-<%= f.submit 'Create Menutype',class:'btn btn-primary'%>
-</div>
-<%end%>
+  <div class='form-group'>
+     <%=f.label :menutype%>
+     <%= f.text_field :menutype, class:'form-group'%>
+  </div>
+
+  <div class ='form-group'>
+     <%= f.submit 'Create Menutype',class:'btn btn-primary'%>
+  </div>
+ <%end%>
 </div>

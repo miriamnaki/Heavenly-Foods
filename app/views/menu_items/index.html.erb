@@ -1,11 +1,9 @@
  <div class='container'>
-<br>
+ <br>
  <h5>SHOP</h5>
 
  <%= range_field_tag 'price', nil, min:0, max:100, oninput:'this.nextElementSibling.value = this.value',value:0 %>
- <output>
- 0
- </output>
+ <output>0</output>
 
 <div class='d-flex justify-content-between'>
   <div class="form-inline form-group menu_item_search inline search-container">
@@ -13,20 +11,20 @@
        <button class="search-button" type="submit"><i class="fas fa-search"></i></button>
   </div>
 
-<div class='justify-content-right'>
-<div class='inline'>
-<h6 class='mt-2'>SORT</h6>
-</div>
+  <div class='justify-content-right'>
+    <div class='inline'>
+      <h6 class='mt-2'>SORT</h6>
+    </div>
 
-<div class='inline'>
-<select id ='menu_item_sort'> 
-  <% menu_item_sort_options.each do |option| %>
-    <option data-href=<%= menu_item_sort_path(option.last) %> val=<%= option.last %> <%= 'selected' if @sort == option.last %>> 
-      <%= option.first %>
-    </option>
-  <% end %>
-</select>
-</div>
+  <div class='inline'>
+    <select id ='menu_item_sort'> 
+      <% menu_item_sort_options.each do |option| %>
+        <option data-href=<%= menu_item_sort_path(option.last) %> val=<%= option.last %> <%= 'selected' if @sort == option.last %>> 
+          <%= option.first %>
+        </option>
+      <% end %>
+    </select>
+  </div>
 </div>
 
 </div>
@@ -37,10 +35,10 @@
  <div class='categories'>
  CATEGORIES: 
  <% Category.all.each do |category|%>
- <span>
- <%= link_to category.name,category_path(category) %>,
- </span>
- <%end%>
+    <span>
+        <%= link_to category.name,category_path(category) %>,
+    </span>
+  <%end%>
  </div>
 
   <div id="menu-items-container" class="row">
@@ -62,9 +60,8 @@ $(document).ready(function(){
   })
 
   $('#price').on('change', function() {
-  
     $.get(window.location.pathname + '/price_search?query=' + this.value).then(function(template) {
-      var $container = $('#menu-items-container');
+      let $container = $('#menu-items-container');
       $container.html(template);
     })
   })

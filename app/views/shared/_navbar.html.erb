@@ -43,18 +43,43 @@
 
       <li class="nav-item active">
 
-      <% if current_user %>
-
-        <%= link_to "LOGOUT", session_path, method: :delete,
+      <% if !current_user&.is_admin %>
+      <div class='d-inline-block user-name'>
+      Hello <%= current_user&.first_name %> 
+      </div>
+       
+       
+      <div class='d-inline-block logout'>
+      <%= link_to "LOGOUT", session_path, method: :delete,
         data: {confirm: 'Are you sure you want to log out?'}, class:"nav-link" %> 
+      </div>
+
+      <% elsif current_user&.is_admin %>
+
+      <div class='d-inline-block user-name'>
+      Hello <%= current_user&.first_name %> 
+      </div>
+
+      
+        <div class='d-inline-block logout'>
+        <%= link_to "NEW ITEM", new_menu_item_path, class:'nav-link' %> 
+       </div>
+      
+
+      <div class='d-inline-block logout'>
+      <%= link_to "LOGOUT", session_path, method: :delete,
+        data: {confirm: 'Are you sure you want to log out?'}, class:"nav-link" %> 
+      </div>
+
+      
       <% else%>
         <%= link_to "LOGIN", new_session_path,class:"nav-link" %>
-
       <% end%>
+
       </li>
       <% if current_user %>
       <li>
-        <i class="fa fa-shopping-cart"></i>
+        <%= link_to ('<i class="fa fa-shopping-cart"></i>').html_safe, shopping_cart_items_path  %>
         <span class='badge badge-warning' id='lblCartCount'> <%= current_user.shopping_cart_items_count%></span>
       </li>
       <%end%>

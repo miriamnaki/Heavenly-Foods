@@ -6,6 +6,7 @@ class MenuItem < ApplicationRecord
   has_many :menu_item_tags
   has_many :tags, through: :menu_item_tags
   belongs_to :menutype
+  belongs_to :user, optional: true
   
   validates :image,presence: true
 end

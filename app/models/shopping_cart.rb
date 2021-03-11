@@ -11,12 +11,16 @@ class ShoppingCart < ApplicationRecord
   end
 
   def final_total
-    final_total = 0
-    shopping_cart_items.all do |item|
-      final_total = item.subtotal + item.tax + item.delivery_fee
-    end
-      return final_total
+    subtotal + delivery_fee + tax
   end
+
+  def delivery_fee
+    0.07 * subtotal
+   end
+
+   def tax
+    0.12 * subtotal
+   end
 
 
 end

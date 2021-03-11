@@ -3,37 +3,37 @@
 <h3>Your order</h3>
 <table class='table table-striped'>
 <tbody>
-<% @shopping_cart.shopping_cart_items.each do |item|%>
 
 <tr>
 <td>subtotal</td>
-<td><%= item.subtotal%></td>
+<td><%= @shopping_cart.subtotal%></td>
 </tr>
 
 <tr>
 <td>tax</td>
-<td><%= item.tax%></td>
+<td><%= @shopping_cart.tax.round(2)%></td>
 </tr>
 
 <tr>
 <td>delivery fee</td>
-<td><%= item.delivery_fee%></td>
+<td><%= @shopping_cart.delivery_fee.round(2)%></td>
 </tr>
-
-<%end%>
 
 <tr>
 <td>Total</td>
-<td> <%=@shopping_cart.final_total%> </td>
+<td> <%=@shopping_cart.final_total.round(2)%> </td>
 </tr>
 
 </tbody>
 </table>
 
-
-<div class='btn btn-primary'> 
-PROCEED TO PAYMENT
-</div>
+<% if current_user.stripe_id.nil? %>
+  <%= form_tag create_payment_method_path, id: "billing-create-payment-method" do  %>
+    <%= link_to "Add Credit Card", add_payment_method_path, remote: true, class: "btn btn-primary" %>
+  <% end %>
+<% else %>
+  <%= link_to 'Pay', pay_path, class: 'btn btn-primary' %>
+<% end %>
 
 <div class='btn btn-primary'> 
 UPDATE CART

@@ -1,4 +1,5 @@
 class MenuItemsController < ApplicationController
+  before_action :authorize_user!,only:[:edit,:update,:destroy]
   include MenuItemsHelper
   def new
     @menu_item = MenuItem.new
@@ -9,7 +10,7 @@ class MenuItemsController < ApplicationController
     category = Category.find_or_create_by(name: params[:category])
     menu_item_category = MenuItemCategory.create(menu_item: menu_item,category:category)
     if menu_item.save
-      flash[:notice]="item created successfully."
+      flash[:notice]="Item created successfully!"
       redirect_to menu_item_path(menu_item)
             
     else
@@ -32,7 +33,7 @@ class MenuItemsController < ApplicationController
       end
       
     elsif @search
-      @menu_items = MenuItem.where("title like ?", "%#{@search}%")
+      @menu_items = MenuItem.where("title ilike ?", "%#{@search}%")
     else
       @menu_items = MenuItem.order(created_at: :desc)
     end
@@ -54,9 +55,19 @@ class MenuItemsController < ApplicationController
   end
 
   def edit
+    @menu_item = MenuItem.find(params[:id])
+    
   end
 
   def update
+    @menu_item = MenuItem.find(params[:id])
+    if @menu_item.update menu_item_params
+      flash[:notice] = 'Item updated successfully'
+      redirect_to menu_item_path(@menu_item)
+    else
+      render :edit
+    end
+
   end
 
   def price_search
@@ -67,6 +78,10 @@ class MenuItemsController < ApplicationController
 
   private
   def menu_item_params
-    params.require(:menu_item).permit(:title,:description,:price,:image,:menutype_id,:category)
+    params.require(:menu_item).permit(:title,:description,:price,:image,:menutype_id,:menutype,:category)
   end
+
+  def authorize_user!
+    redirect_to root_path, alert: 'Not Authorized' unless can?(:crud, @menu_item)
+end
 end
