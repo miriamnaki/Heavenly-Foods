@@ -1,6 +1,9 @@
 <div class ='container'>
 <br>
-<%= form_for :menutype, url: menutypes_path do |f| %>
+<%= form_with model: @menu_type, local: true do |f| %>
+<% if @menu_type.errors.present? %>
+<%= @menu_type.errors.full_messages.join(', ')%>
+<%end%>
 
 
   <div class='form-group'>

@@ -1,5 +1,5 @@
 <div class='container'>
-
+<br>
 <h3>Your order</h3>
 <table class='table table-striped'>
 <tbody>
@@ -27,16 +27,21 @@
 </tbody>
 </table>
 
+<% if current_user.stripe_id %>
+<p>Pay with **** **** **** <%= last_four_digits(current_user) %></p>
+<%= link_to 'PAY NOW', pay_path, class: 'btn btn-primary' %>
+  <%end%>
+
+
 <% if current_user.stripe_id.nil? %>
   <%= form_tag create_payment_method_path, id: "billing-create-payment-method" do  %>
     <%= link_to "Add Credit Card", add_payment_method_path, remote: true, class: "btn btn-primary" %>
-  <% end %>
-<% else %>
-  <%= link_to 'Pay', pay_path, class: 'btn btn-primary' %>
+<% end %>
 <% end %>
 
-<div class='btn btn-primary'> 
-UPDATE CART
+<div class= 'd-inline'> 
+<%= link_to 'UPDATE CART', shopping_cart_items_path,class:'btn btn-primary' %>
 </div>
+<br><br><br><br><br><br>
 
 </div>

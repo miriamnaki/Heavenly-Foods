@@ -28,6 +28,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'stripe'
 gem 'stripe-rails'
 gem 'figaro'
 group :development, :test do

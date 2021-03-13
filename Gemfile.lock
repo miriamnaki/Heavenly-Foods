@@ -216,6 +216,7 @@ DEPENDENCIES
   rails (~> 6.1.1)
   sass-rails (>= 6)
   spring
+  stripe
   stripe-rails
   tzinfo-data
   web-console (>= 4.1.0)

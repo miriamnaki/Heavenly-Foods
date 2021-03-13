@@ -5,7 +5,7 @@
   </div>
 
 <div class='inline'>
-<h1 class='title2'><%= @menu_item.title %></h1>
+<h1 class='title2'><%= @menu_item.title.titleize %></h1>
 <p class='label' id='price'>$<%= @menu_item.price%></p>
 <p class='label'><%= @menu_item.description%></p>
 
@@ -38,69 +38,83 @@
 
 <%# This is a review list  %>
 <% @reviews.each do |review|%>
-<div>
+  <div>
     <%= review.user&.first_name || "DELETED" %> says 
-</div>
+  </div>
   <div>
     <%= display_stars(review)%>
   </div>
-
   <div>
     <%= review.body %>
   </div>
-
-  
-
-  <% if can? :crud,review %>
-<%= link_to "Delete",menu_item_review_path(@menu_item,review), method: :delete,data: {confirm: "Delete review?"} %>
-
+  <% if review.replies.exists? %>
+    <ul>
+      <% review.replies.each do |reply| %>
+        <li><%= reply.message %> - <%= reply.user.first_name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if current_user == review.user %>
+    <%= link_to "Delete",menu_item_review_path(@menu_item,review), method: :delete,data: {confirm: "Delete review?"} %>
   <% end%>
+  <div>
+    <%= link_to 'Reply', '#', class: 'reply-btn' %>
+    <div class='d-none reply'>
+      <%= form_for Reply.new do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :review_id, value: review.id %>
+        <%= f.text_area :message %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
 
 <br>
-<h2 class='review_title'>ADD A REVIEW</h2>
-<%= form_with model:[@menu_item,@review], local: true do |f|%>
+<% if current_user && !@reviews.where(user: current_user).exists? %>
+  <h2 class='review_title'>ADD A REVIEW</h2>
+  <%= form_with model:[@menu_item,@review], local: true do |f|%>
 
-<% if @review.errors.present?%>
-    <%= @review.errors.full_messages.join(', ')%>
-<%end%>
+  <% if @review.errors.present?%>
+      <%= @review.errors.full_messages.join(', ')%>
+  <%end%>
 
-<div>
-<i class="far fa-star"></i>
-<i class="far fa-star"></i>
-<i class="far fa-star"></i>
-<i class="far fa-star"></i>
-<i class="far fa-star"></i>
-</div>
-<div class='form-group d-none'>
-<%= f.label :rating,'Your rating'%>
-<%= f.select :rating,Array(1..5), class: 'form-control '%>
-</div>
+  <div>
+  <i class="far fa-star"></i>
+  <i class="far fa-star"></i>
+  <i class="far fa-star"></i>
+  <i class="far fa-star"></i>
+  <i class="far fa-star"></i>
+  </div>
+  <div class='form-group d-none'>
+  <%= f.label :rating,'Your rating'%>
+  <%= f.select :rating,Array(1..5), class: 'form-control '%>
+  </div>
 
-<div class='form-group'>
-<%= f.label :body,'Review'%>
-<%= f.text_area :body, cols: 50, rows: 5,class:'form-control'%>
-</div>
+  <div class='form-group'>
+  <%= f.label :body,'Review'%>
+  <%= f.text_area :body, cols: 50, rows: 5,class:'form-control'%>
+  </div>
 
-<%# place name and email for user to submit with review %>
-<div class='form-group'>
-<%= f.label :first_name,'Name'%>
-<%= f.text_field :first_name, class:'form-control', value: current_user&.first_name%>
-</div>
+  <%# place name and email for user to submit with review %>
+  <div class='form-group'>
+  <%= f.label :first_name,'Name'%>
+  <%= f.text_field :first_name, class:'form-control', value: current_user&.first_name%>
+  </div>
 
-<div class='form-group'>
-<%= f.label :email%>
-<%= f.email_field :email,class:'form-control', value: current_user&.email%>
-</div>
+  <div class='form-group'>
+  <%= f.label :email%>
+  <%= f.email_field :email,class:'form-control', value: current_user&.email%>
+  </div>
 
-<div class='form-group'>
-<%= f.submit 'Submit', class:'btn btn-secondary cart'%>
-</div>
-<br>
+  <div class='form-group'>
+    <%= f.submit 'Submit', class:'btn btn-secondary cart'%>
+  </div>
+  <br>
 
-<%end%>
-
+  <%end%>
+<% end %>
 
 </div>
 
@@ -119,6 +133,12 @@
        $(allStars[i]).addClass('fas');
      }
      $('#review_rating').val($(this).index() + 1);
+   })
+
+   $('.reply-btn').on('click', function(e) {
+     e.preventDefault();
+     const formContainer = $(this).siblings('.reply')[0];
+     $(formContainer).removeClass('d-none')
    })
 
 </script>

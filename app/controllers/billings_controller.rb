@@ -40,8 +40,8 @@ class BillingsController < ApplicationController
       customer.source = card_token
       #we're attaching the card to the stripe customer
       customer.save
-
-      format.html { redirect_to success_path }
+       flash[:alert] = 'You have successfully added a card to your account'
+      format.html { redirect_to final_order_shopping_cart_items_path }
     end
   end
 
@@ -52,14 +52,19 @@ class BillingsController < ApplicationController
       items = current_user.shopping_cart.shopping_cart_items.map do |shopping_cart_item|
         shopping_cart_item.menu_item.title
       end.join(', ')
+      total = (current_user.shopping_cart.final_total.round(2) * 100).to_i
       Stripe::Charge.create({
-        amount: (current_user.shopping_cart.final_total.round(2) * 100).to_i,
+        amount: total,
         currency: 'cad',
         description: items,
         customer: current_user.stripe_id
       })
+      transaction = Transaction.create_receipt(current_user.shopping_cart, total)
       current_user.shopping_cart.shopping_cart_items.map(&:destroy)
-      redirect_to menu_items_path
+      redirect_to transaction_path(transaction)
+    end
+
+    def receipt
     end
 
   private

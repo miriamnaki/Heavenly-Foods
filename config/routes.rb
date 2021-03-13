@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get('/about',{to:'about#about'})
   get('/gallery',{to:'gallery#gallery'})
   get('/contact',{to:'contact#contact'})
+  post('/contact/send_email',{to:'contact#send_email'})
+
   get('/reservation',{to:'reservation#reservation'})
   
 
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :bookings
   resources :users
+  resources :replies
   resource :session
   resources :shopping_cart_items do
     collection do
@@ -31,4 +34,5 @@ Rails.application.routes.draw do
   post "/card" => "billings#create_card", as: :create_payment_method
   get '/success' => 'billings#success', as: :success
   get '/pay' => 'billings#pay', as: :pay
+  resources :transactions
 end

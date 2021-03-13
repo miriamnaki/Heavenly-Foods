@@ -1,7 +1,7 @@
 class MenutypesController < ApplicationController
 
   def new
-    menu_type = Menutype.new
+    @menu_type = Menutype.new
   end
   
   def create
