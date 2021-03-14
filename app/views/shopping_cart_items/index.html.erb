@@ -1,63 +1,70 @@
 <div class='container'>
-<%  if @shopping_cart.shopping_cart_items.present? %>
-<h3>CART</h3>
-<table class='table table-striped'>
-<thead>
-<tr>
-<th></th>
-<th>Item</th>
-<th>Price</th>
-<th>Quantity</th>
-<th>Subtotal</th>
 
-</tr>
-</thead>
-<tbody>
-<% @shopping_cart.shopping_cart_items.each do |item|%>
-<tr>
-<td><%= link_to("X",shopping_cart_item_path(item),method: :delete, data:{confirm:"Delete item?"} )%></td>
+<div class='card ml-4 mb-4 mt-4 mr-4'>
+  <div class='ml-4 mb-4 mt-4 mr-4'>
+    <%  if @shopping_cart.shopping_cart_items.present? %>
+    <h3 class='cart-title'>Cart</h3>
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
 
-<td><%= item.menu_item.title%></td>
-<td><%= item.menu_item.price%></td>
-<td><%= item.quantity%></td>
-<td><%= item.subtotal%></td>
-</tr>
-<%end%>
+        </tr>
+      </thead>
 
-<tr>
-<td>Total</td>
-<td></td>
-<td></td>
-<td></td>
-<td> <%=@shopping_cart.subtotal%> </td>
-</tr>
-</tbody>
-</table>
+      <tbody>
+      <% @shopping_cart.shopping_cart_items.each do |item|%>
+        <tr>
+          <td><%= link_to("X",shopping_cart_item_path(item),method: :delete, data:{confirm:"Delete item?"} )%></td>
 
-<div class='d-flex float-right'>
-<%= link_to "CONTINUE SHOPPING", menu_items_path,class:'btn btn-primary' %>  
-</div>
+          <td><%= item.menu_item.title%></td>
+          <td><%= item.menu_item.price%></td>
+          <td><%= item.quantity%></td>
+          <td><%= item.subtotal%></td>
+        </tr>
+      <%end%>
 
- <br><br>
-<div class='d-flex float-right'>
-<%= link_to "PROCEED TO CHECKOUT", final_order_shopping_cart_items_path, class:'btn btn-primary'%>
-</div>
+        <tr>
+          <td>Total</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td> <%=@shopping_cart.subtotal%> </td>
+        </tr>
+      </tbody>
+    </table>
 
-<br><br><br><br><br><br><br><br><br>
+    <div class='d-flex float-right'>
+       <%= link_to "CONTINUE SHOPPING", menu_items_path,class:'btn btn-primary' %>  
+    </div>
 
-<% else %>
+    <br><br>
 
-<br><br>
+    <div class='d-flex float-right'>
+       <%= link_to "PROCEED TO CHECKOUT", final_order_shopping_cart_items_path, class:'btn btn-primary'%>
+    </div>
 
-<h4 class='text-center'>You dont  have any items in your cart</h4>
-<br>
+    <br><br><br><br><br><br><br><br><br>
 
-<div class='text-center'>
-<%= link_to "SHOP NOW", menu_items_path,class:'btn btn-primary' %> 
-</div> 
+    <% else %>
 
-<br><br><br><br><br><br><br><br>
-<% end %>
+    <br><br>
+
+    <h4 class='text-center'>You dont  have any items in your cart</h4>
+    <br>
+
+    <div class='text-center'>
+      <%= link_to "SHOP NOW", menu_items_path,class:'btn btn-primary' %> 
+    </div> 
+
+    <br><br><br><br><br><br><br><br>
+    <% end %>
 
 
+  </div>
+ </div>
 </div>

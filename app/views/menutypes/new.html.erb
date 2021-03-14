@@ -1,5 +1,15 @@
 <div class ='container'>
-<br>
+
+<div class='card ml-4 mr-4 mt-4 mb-4'>
+<div class=' jumbotron'>
+<br><br>
+
+<div class='new_menutype_title'>
+<h2>Add your menu type</h2>
+</div>
+
+<br><br>
+
 <%= form_with model: @menu_type, local: true do |f| %>
 <% if @menu_type.errors.present? %>
 <%= @menu_type.errors.full_messages.join(', ')%>
@@ -7,12 +17,15 @@
 
 
   <div class='form-group'>
-     <%=f.label :menutype%>
-     <%= f.text_field :menutype, class:'form-group'%>
+     <%=f.label :menutype,class:'label'%>
+     <%= f.text_field :menutype, class:'form-control'%>
   </div>
 
   <div class ='form-group'>
      <%= f.submit 'Create Menutype',class:'btn btn-primary'%>
   </div>
  <%end%>
+ <br><br><br><br><br><br><br><br>
+  </div>
+ </div>
 </div>

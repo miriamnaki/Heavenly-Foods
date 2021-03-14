@@ -4,7 +4,8 @@ class ContactController < ApplicationController
 
   def send_email
     ContactMailer.with(email: params[:email], name: params[:name], message: params[:message]).contact_email.deliver_now
-    redirect_to menu_items_path
+    flash[:alert] = 'Thank you for your email'
+    redirect_to contact_path
   end
 
 end

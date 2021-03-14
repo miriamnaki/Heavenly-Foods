@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.bookings {
+  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('booking/table2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
   div.inline{
     display: inline;
   }
@@ -29,17 +37,5 @@ body.bookings {
     color: #000;
   }
 
-  .table{
-    width: 1310px;
-    height:600px;
-    background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('booking/table2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center center;
-    text-align:center;
-    margin-right:0px;
-    margin-left:0px;
-    padding:0;
-    
-  }
+  
 }

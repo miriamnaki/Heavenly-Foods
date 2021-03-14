@@ -2,24 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.gallery{
-.image{
-  width: 300px;
-  height: 300px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 20px;
-}
-.heading{
-  text-align: center;
-  font-size: 40px;
-  color:black;
-  margin-top: 0px;
-  font-family: 'Akaya Telivigala', cursive;
-  // font-family: sans-serif;
-}
-.backpic{
-  width: 1310px;
-  height:700px;
   background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('gallery/galleryback.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
@@ -29,5 +11,17 @@ body.gallery{
   margin-left:0px;
   padding:0;
   
+.image{
+  width: 300px;
+  height: 300px;
 }
+.heading{
+  text-align: center;
+  font-size: 40px;
+  color:black;
+  margin-top: 0px;
+  font-family: 'Rochester', cursive;
+  
+}
+
 }

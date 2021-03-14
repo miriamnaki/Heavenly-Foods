@@ -16,10 +16,12 @@ body.menu_items{
   font-family: 'Shippori Mincho', serif;
   margin-left: 100%;
   color:goldenrod !important;
-  
   white-space: nowrap;
+
   
-  
+}
+.title2{
+  color: goldenrod;
 }
 .label{
   font-family: 'Shippori Mincho', serif;
@@ -27,6 +29,7 @@ body.menu_items{
 }
 #price{
   font-size: 25px;
+  color: goldenrod;
 }
 #quantity{
   max-width: 20%;
@@ -53,11 +56,11 @@ div.inline2{
 }
 .btn-primary:hover,
   .btn-primary,
-      .btn-primary:active,
-      .btn-primary:visited,
-      .btn-primary:focus {
-        background-color: goldenrod !important;
-        border-color: goldenrod !important;
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
         
   }
   .fab.fa-facebook-f{
@@ -108,9 +111,10 @@ div.inline2{
   select {
     border-radius: 3px;
     border:solid goldenrod;
-    width: 120px;
+    width: 160px;
     height: 30px;
     color: #000;
+    
   }
   // .search{
   //   border-radius: 3px;
@@ -123,6 +127,7 @@ div.inline2{
     position: relative;
     border-radius: 30px;
     padding: 3px 50px 3px 10px;
+    height: 45px;
   }
   .search-box {
     background-color: transparent;
@@ -144,6 +149,61 @@ div.inline2{
     height: 35px;
     outline: 0;
   }
+  .price-search{
+    max-width: 130px;
+    
+  }
+  .filter-price-tag{
+    margin-left: 0px;
+    
+  }
+  #shop-header{
+  font-family: 'Akaya Telivigala', cursive;
+  font-weight: bolder;
+  font-size: 40px; 
+  }
+  .option-label{
+    font-family: 'Vollkorn', serif;
+
+
+  }
+  .category-name{
+    font-size: 20px;
+  }
+  .category-label{
+    font-size: 18px;
+  }
+  .range-tag{
+    height: 1px;
+    
+  }
+  .star-colors{
+    color: goldenrod;
+    font-size: 20px;
+  }
+  .text-area-reply{
+    max-width: 200px;
+  }
+  ul li{
+    color: palevioletred;
+  }
+  .far.fa-star{
+    color: goldenrod;
+    font-size: 20px;
+  }
+  .fas.fa-star{
+    color: goldenrod;
+    font-size: 20px;
+  }
+  .jumbotron{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    margin-right: 350px;
+    
+
+  }
+  
   
   
   

@@ -48,6 +48,32 @@ body.menutypes{
 #item-description{
   background-color:peachpuff;
 }
+.jumbotron{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 100px;
+  margin-right: 350px;
 
   
+}
+.new_menutype_title{
+  font-family: 'Shippori Mincho', serif;
+  margin-left: 10%;
+  margin-top:10px;
+  font-size: 40px;
+}
+.label{
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+}
+.btn-primary:hover,
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+background-color: goldenrod !important;
+border-color: goldenrod !important;
+        
+  }
+
 }

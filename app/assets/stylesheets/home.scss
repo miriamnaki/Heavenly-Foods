@@ -8,11 +8,9 @@
 //   background-repeat: no-repeat;
 //   background-size: auto;
 // }
-body.home{
- .background{
-  width: 1310px;
-  height:700px;
-  background-image: url('home/homePage2.jpg');
+
+body.home {
+  background-image: url('home/homepage11.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center center;
@@ -20,22 +18,19 @@ body.home{
   margin-right:0px;
   margin-left:0px;
   position: relative;
-  
-  padding:0;
-  opacity:90%
-}
-.fonts{
+#title{
   font-size: 85px;
-  font-weight: 30px;
-  color: gold;
-  font-family: 'Kumar One Outline', cursive;
+  font-weight: bolder;
+  color: yellow;
+  font-family: 'Rochester', cursive;
+  
   
 }
-.subtitle{
+#subtitle{
   font-size: 30px;
-  font-weight: 40px;
+  font-weight: bolder;
   color: white;
-  font-family: 'Rochester', cursive;;
+  font-family: 'Rochester', cursive;
 }
 
 }

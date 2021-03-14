@@ -39,11 +39,13 @@
         <%= link_to "SHOP", menu_items_path, class:"nav-link" %> 
 
       </li>
-       <li class="nav-item">
         <% if current_user&.is_admin %>
-        <%= link_to "New Menu Item", new_menu_item_path, class:"nav-link" %>
-      <% end %>
+       <li class="nav-item">
+        <%= link_to "NEW MENU ITEM", new_menu_item_path, class:"nav-link" %>
        </li>  
+       <li class="nav-item">
+         <%= link_to "NEW MENU TYPE", new_menutype_path, class:"nav-link" %>       </li>  
+      <% end %>
 
       <li class="nav-item active">
 

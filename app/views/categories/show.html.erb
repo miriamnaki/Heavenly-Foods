@@ -1,34 +1,53 @@
  <div class='container'>
 
- <h5>Category</h5>
 
- <div>
- <% Category.all.each do |category|%>
- <li>
- <%= link_to category.name,category_path(category) %>
- </li>
- <%end%>
- </div>
-  <div class="row">
-    <% @menu_item_categories.each do |menu_item_category|%>
-      <% item = menu_item_category.menu_item%>
-      <% if item %>
-            <div class='col-4'> 
-                  <% if item.image.attached?%>
-                  <%= image_tag(item.image,class:'menu_item_image') %>
-                  <%end%>
-              <div class='col-4'> 
-                  <h3 class=title><%= item.title%></h3>
-              </div>
+<div class='card ml-4 mr-4 mb-4 mt-4'>
+  <div class='ml-4 mr-4 mb-4 mt-4'>
+  <div class ='d-flex justify-content-left'>
+    <h5 class='d-inline category-title'>CATEGORIES:</h5>
+     
+        <div>
+        <% Category.all.each do |category|%>
+          <div class='d-inline ml-2 category-name'>
+            <%= link_to category.name,category_path(category) %>
+          </div>
+        <%end%>
+        </div>
 
-              <div class='col-4'> 
-                  <h4 class='title'>$<%= item.price%></h4>
-              </div>
-            </div>
+    </div>
+
+    <hr>
+
+        <% @menu_item_categories.each do |menu_item_category|%>
+        <div class='mb-3 category-title'>
+          <h4><%= menu_item_category.category.name.pluralize%></h4>
+        </div>
         <%end%>
 
-  
 
-  <%end%>
+        <div class='card'>
+        <div class='ml-4 mr-4 mb-4 mt-4'>
+        <div class="row">
+            <% @menu_item_categories.each do |menu_item_category|%>
+              <% item = menu_item_category.menu_item%>
+              <% if item %>
+                        <div class='col-4'> 
+                              <% if item.image.attached?%>
+                              <%= image_tag(item.image,class:'menu_item_image') %>
+                              <%end%>
+                            <div>
+                            <h3 class='title' ><%= link_to item.title.titleize, menu_item_path(item),class:'title-price' %></h3>
+                            <h4 class='title title-price'>$<%= link_to item.price, menu_item_path(item),class:'title-price'%></h4>
+                            </div>
+                        </div>
+
+                        
+              <%end%>
+          <%end%>
+        </div>
+        </div>
+        </div>
+
   </div>
+</div>
 </div>

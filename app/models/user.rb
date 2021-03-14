@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :reviews
   has_one :shopping_cart
+  has_many :replies
   has_many :menu_items, dependent: :nullify
 
   def shopping_cart_items_count

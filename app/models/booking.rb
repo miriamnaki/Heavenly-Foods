@@ -15,7 +15,7 @@ class Booking < ApplicationRecord
 
   def within_business_hours
     if self.booking_time.hour < 9 || self.booking_time.hour > 22
-      errors.add(:base, 'Sorry its past time')
+      errors.add(:base, 'Sorry its past time.Please book within our business hours!')
     end
   end
 

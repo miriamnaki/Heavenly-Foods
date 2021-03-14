@@ -2,16 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.users{
-.sign_up{
-  margin-left: 30%;
-}
-#sign_up_header{
-  margin-left: 20%;
-}
-#sign_up_button{
-  margin-left: 30%;
-}
-#sign_in_link{
-  margin-left: 10%;
-}
+  .jumbotron{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 200px;
+  margin-right: 300px;
+  
+  }
+  .label{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 20px;
+  }
+  .signup-title{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 30px;
+  }
+  .content{
+    font-family: 'Vollkorn', serif;
+  }
+  .btn-primary:hover,
+  .btn-primary,
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+  background-color: goldenrod !important;
+  border-color: goldenrod !important;
+  font-size: 20px;
+          
+    }
+  
 }

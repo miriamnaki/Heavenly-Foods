@@ -1,48 +1,53 @@
 <div class='container'>
 
-<h3 class='new_item_title'>upload your menu item</h3>
-<%= form_for @menu_item, local: true do |f|%>
-<% if @menu_item.errors.present? %>
-<%= @menu_item.errors.full_messages.join(', ')%>
-<%end%>
+<div class='card ml-4 mr-4 mt-4 mb-4'>
+  <div class='jumbotron'>
 
-<div class='form-group mt-3'>
-<%= f.label :title,class:'label' %>
-<%= f.text_field :title, class:'form-control' %>
-</div>
+    <h3 class='new_item_title'>Upload your menu item</h3>
+        <%= form_for @menu_item, local: true do |f|%>
+        <% if @menu_item.errors.present? %>
+            <%= @menu_item.errors.full_messages.join(', ')%>
+        <%end%>
 
-<div class ='form-group'>
-<%= f.label :description,class:'label' %>
-<%= f.text_field :description, class:'form-control' %>
-</div>
+        <div class='form-group mt-3'>
+          <%= f.label :title,class:'label' %>
+          <%= f.text_field :title, class:'form-control' %>
+        </div>
 
-<div class ='form-group'>
-<%= f.label :price,class:'label' %>
-<%= f.number_field :price, class:'form-control' %>
-</div>
+        <div class ='form-group'>
+          <%= f.label :description,class:'label' %>
+          <%= f.text_field :description, class:'form-control' %>
+        </div>
 
-
-<div class='form-group'> 
-<%= f.label :image,class:'label'%>
-<%= f.file_field :image%>
-</div>
-
-<div>
- <%= label_tag 'category'%>
- <%= text_field_tag 'category'%>
- </div>
+        <div class ='form-group'>
+          <%= f.label :price,class:'label' %>
+          <%= f.number_field :price, class:'form-control' %>
+        </div>
 
 
- <div class='form-group'>
- <%= label_tag :'Menu Type'%>
- <%= f.select :menutype_id, Menutype.all.map {|m| [m.menutype,m.id]} %>
- </div>
+        <div class='form-group'> 
+          <%= f.label :image,class:'label'%>
+          <%= f.file_field :image%>
+        </div>
 
-<div class='form-group'>
-<%= f.submit 'UPLOAD' ,class:'btn btn-primary'%>
-</div>
-<% end %>
+        <div class='label form-group'> 
+          <%= label_tag 'category'%>
+          <%= text_field_tag 'category',nil,class:'form-control'%>
+        </div>
+
+
+        <div class='form-group label'>
+          <%= label_tag :'Menu Type'%>
+          <%= f.select :menutype_id, Menutype.all.map {|m| [m.menutype,m.id]} %>
+        </div>
+
+        <div class='form-group'>
+          <%= f.submit 'UPLOAD' ,class:'btn btn-primary'%>
+        </div>
+       <% end %>
 
 
 <br><br><br><br><br><br>
+  </div>
+ </div>
 </div>
