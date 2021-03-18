@@ -39,14 +39,16 @@
 <%= link_to "PAY $#{ @shopping_cart.final_total.round(2)}", pay_path, class: 'btn btn-primary' %>
   <%end%>
 
-
+<br>
 <% if current_user.stripe_id.nil? %>
   <%= form_tag create_payment_method_path, id: "billing-create-payment-method" do  %>
-    <%= link_to "Add Credit Card", add_payment_method_path, remote: true, class: "btn btn-primary" %>
+  <div class='inline-block'>
+    <%= link_to "ADD CREDIT CARD", add_payment_method_path, remote: true, class: "btn btn-primary" %>
+  </div>
 <% end %>
 <% end %>
-
-<div class= 'd-inline'> 
+<br>
+<div class='inline-block'> 
 <%= link_to 'UPDATE CART', shopping_cart_items_path,class:'btn btn-primary' %>
 </div>
 <br><br><br><br><br><br>

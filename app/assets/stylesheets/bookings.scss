@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.bookings {
-  background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('booking/table2.jpg');
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('booking/table2.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center center;
@@ -10,6 +10,7 @@ body.bookings {
   margin-right:0px;
   margin-left:0px;
   padding:0;
+  
   div.inline{
     display: inline;
   }
@@ -26,6 +27,7 @@ body.bookings {
     font-weight: bolder;
     font-family: 'Akaya Telivigala', cursive;
     text-align: center;
+    color: goldenrod;
   }
   select {
     border-radius: 3px;
@@ -35,6 +37,9 @@ body.bookings {
     height: 40px;
     background: goldenrod;
     color: #000;
+  }
+  .num-people{
+    font-family: 'Shippori Mincho', serif;
   }
 
   

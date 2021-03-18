@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.contact{
-  background-color: beige;
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('gallery/contact.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
 .form-group{
   max-width: 500px;
 }
@@ -12,13 +18,13 @@ body.contact{
 }
 
 #title{
-  margin-left: 150px;
+  // margin-left: 150px;
   font-weight: bolder;
   font-size: 30px;
   font-family: 'Akaya Telivigala', cursive;
 }
-.form-control{
-  outline-color: goldenrod !important;
+.form-group{
+  text-align: left;
 }
 
   .btn-outline-primary:hover,
@@ -30,6 +36,7 @@ body.contact{
     background-color: goldenrod !important;
     border-color: goldenrod !important;
     color:white;
+    
     // width: 40%;
 }
 .content{
@@ -40,13 +47,14 @@ body.contact{
 }
 .card{
   
-  background-color: beige;
+  // background-color: beige;
 }
 .card.contact{
-  margin-right: 500px;
-  margin-left: 20px;
+  margin-right: 300px;
+  margin-left: 200px;
   margin-bottom: 30px;
   margin-top: 30px;
+  background-color: beige;
 
 }
 #location-title{
@@ -54,6 +62,7 @@ body.contact{
   text-align: center;
   font-weight: bolder;
   font-size: 30px;
+  color: white;
 }
 
 

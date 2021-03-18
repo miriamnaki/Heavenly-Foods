@@ -3,11 +3,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new 
   end
 
+  def show
+     @booking = Booking.find(params[:id])
+
+  end
+
   def create
     booking = Booking.new(booking_params.merge(user: current_user))
     if booking.save
+      BookingMailer.with(booking: booking).appointment.deliver_now
       flash[:notice] = 'Your table has been saved'
-      redirect_to root_path
+      redirect_to booking_path(booking)
 
     else
       flash[:danger] = booking.errors.full_messages.to_sentence

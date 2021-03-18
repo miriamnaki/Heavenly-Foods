@@ -18,10 +18,10 @@
 
     <hr>
 
-        <% @menu_item_categories.each do |menu_item_category|%>
-        <div class='mb-3 category-title'>
-          <h4><%= menu_item_category.category.name.pluralize%></h4>
-        </div>
+        
+        <%if @menu_item_categories%>
+          <h4><%= @category.name.pluralize%></h4>
+        
         <%end%>
 
 
@@ -36,7 +36,7 @@
                               <%= image_tag(item.image,class:'menu_item_image') %>
                               <%end%>
                             <div>
-                            <h3 class='title' ><%= link_to item.title.titleize, menu_item_path(item),class:'title-price' %></h3>
+                            <h4 class='title' ><%= link_to item.title.titleize, menu_item_path(item),class:'title-price' %></h4>
                             <h4 class='title title-price'>$<%= link_to item.price, menu_item_path(item),class:'title-price'%></h4>
                             </div>
                         </div>

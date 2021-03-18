@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Logged in as #{user.email}"
       redirect_to root_path
     else
+      flash[:danger] = 'Something went wrong, please try again'
       redirect_to new_user_path
     end
 

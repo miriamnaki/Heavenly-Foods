@@ -31,3 +31,13 @@ Things you may want to cover:
       </li>
 
       category snack causes an error when clicked
+
+
+
+      <%# <% if can? :crud,item %> %>
+        <%# <%= link_to("DELETE", menu_item_path(item),method: :delete, data:{confrim:'Delete item?'},class:'menu_item_delete')%> %>
+        <%# <%end%> %>
+
+        <%# <% if can? :crud,item %> %>
+        <%# <%= link_to("EDIT", edit_menu_item_path(item),class:'menu_item_delete')%> %>
+        <%# <%end%> %>

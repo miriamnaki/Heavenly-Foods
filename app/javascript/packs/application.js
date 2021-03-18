@@ -14,6 +14,8 @@ require('@rails/activestorage').start()
 require('channels')
 require('jquery')
 
+
+
 $(document).on('click', function(){
   $('#datetimepicker').datetimepicker({
     format: "YYYY-MM-DD",

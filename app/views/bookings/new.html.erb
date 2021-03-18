@@ -9,7 +9,7 @@
 <%= form_with model:@booking, local: true do |f|%>
 
 
-<div class='inline'>
+<div class='inline num-people'>
 <% num_people_array = Array(1..10).map { |number| ["#{number} people", number] } %>
 <% f.label :num_people %>
 <%= f.select :num_people, num_people_array,class:'btn btn-primary',value:1 %>
@@ -22,7 +22,7 @@
 
 
 <div class='inline'> 
-<%= f.label :time %>
+<% f.label :time %>
 <%= f.time_field :time,class:'btn btn-primary',value:Time.now.to_s%>
 
  

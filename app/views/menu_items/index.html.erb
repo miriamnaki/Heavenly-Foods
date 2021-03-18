@@ -1,9 +1,6 @@
  <div class='container'>
- 
- <br>
-
- <div class='card ml-4 mr-4 mb-4 mt-4'>
-   <div class='ml-3 mr-3 mb-3 mt-3'>
+ <%# <div class='card ml-4 mr-4 mb-4 mt-4'> %>
+   <div class='ml-3 mr-3 '>
 
     <h5 id='shop-header'>Shop</h5>
     <hr>
@@ -79,20 +76,20 @@
 
         <%# menu item card container %>
 
-          <div class='card ml-4 mr-4 mb-4 mt-4'>
+          <%# <div class='card ml-4 mr-4 mb-4 mt-4'> %>
             <div class='ml-3 mr-3 mb-3 mt-3'>
 
-              <div id="menu-items-container" class="row">
+              <div  id='menu-items-container'class="row">
                 <%= render partial: 'menu_items', locals: { menu_items: @menu_items } %>
               </div>
 
             </div>
-          </div>
+          <%# </div> %>
 
       </div>
 
       </div>
-    </div>
+    <%# </div> %>
 
 </div>
 

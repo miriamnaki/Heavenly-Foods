@@ -10,7 +10,8 @@
 // }
 
 body.home {
-  background-image: url('home/homepage11.jpg');
+  // background-color: black;
+  background-image: url('home/background1.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center center;
@@ -18,19 +19,27 @@ body.home {
   margin-right:0px;
   margin-left:0px;
   position: relative;
-#title{
+h1.title{
   font-size: 85px;
   font-weight: bolder;
-  color: yellow;
-  font-family: 'Rochester', cursive;
+  color: goldenrod;
+  font-family: 'Pinyon Script', cursive;
   
   
 }
-#subtitle{
+.subtitle{
   font-size: 30px;
   font-weight: bolder;
   color: white;
   font-family: 'Rochester', cursive;
 }
+hr{ 
+  border: none; 
+  height: 2px; 
+  background-color: goldenrod;
+  width:100%
+  
+}
+
 
 }

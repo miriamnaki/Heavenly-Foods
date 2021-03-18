@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RestaurantApp</title>
+    <title>Heavenly Foods</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+     
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +20,12 @@
   <%= render '/shared/navbar' %>
   
   <div class='container'>
-    <%= flash[:notice] || flash[:alert] || flash[:danger] %>
+  <br>
+  <%if flash.present? %>
+    <%# <div class= 'alert alert-info" role="alert'>
+      <%= flash[:notice] || flash[:alert] || flash[:danger] %>
+    </div> %>
+    <%end%>
   </div>
     <%= yield %>
     

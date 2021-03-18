@@ -2,24 +2,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.menu_items{
+  background:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url('home/shopping3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
 
-
-.menu_item_image{
+// index page
+.index_item_image{
   max-width: 100%;
-  margin-top: 10%;
-  width: 400px;
-  height: 400px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 300px;
+  height: 250px;
 }
+
+hr{ 
+  border: none; 
+  height: 2px; 
+  background-color: goldenrod;
+  width:100%
+  
+}
+.card-effect{
+  border: solid 1px #555;
+  background-color: #eed;
+  box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  border-radius:25px;
+  
+}
+
+.card-title{
+  font-family: 'Shippori Mincho', serif;
+  font-size: 20px;
+  color: goldenrod !important;
+}
+
 .title{
   font-family: 'Shippori Mincho', serif;
-  margin-left: 100%;
   color:goldenrod !important;
   white-space: nowrap;
 
   
 }
+.category-label{
+  font-size: 18px;
+  font-family: 'Shippori Mincho', serif;
+  color:goldenrod !important;
+}
+select {
+  border-radius: 3px;
+  border:solid goldenrod;
+  width: 160px;
+  height: 30px;
+  color: #000;
+}
+select,option{
+  font-family: 'Shippori Mincho', serif;
+}
+}
+#shop-header{
+font-family: 'Akaya Telivigala', cursive;
+font-weight: bolder;
+font-size: 40px;
+color: goldenrod; 
+}
+
+
+
+
 .title2{
   color: goldenrod;
 }
@@ -39,6 +94,15 @@ body.menu_items{
   margin-left: 10%;
   margin-top:10px;
   font-size: 40px;
+}
+.show_item_image{
+  max-width: 100%;
+  margin-top: 10%;
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
 }
 
 div.inline{
@@ -105,7 +169,7 @@ div.inline2{
   }
 
   .menu_item_delete{
-    margin-left: 28%;
+    // margin-left: 28%;
     color:goldenrod;
   }
   select {
@@ -116,12 +180,7 @@ div.inline2{
     color: #000;
     
   }
-  // .search{
-  //   border-radius: 3px;
-  //   border:solid goldenrod;
-  //   color: #000;
-
-  // }
+  
   .search-container {
     background-color: goldenrod;
     position: relative;
@@ -156,12 +215,7 @@ div.inline2{
   .filter-price-tag{
     margin-left: 0px;
     
-  }
-  #shop-header{
-  font-family: 'Akaya Telivigala', cursive;
-  font-weight: bolder;
-  font-size: 40px; 
-  }
+  
   .option-label{
     font-family: 'Vollkorn', serif;
 
@@ -170,9 +224,7 @@ div.inline2{
   .category-name{
     font-size: 20px;
   }
-  .category-label{
-    font-size: 18px;
-  }
+  
   .range-tag{
     height: 1px;
     
@@ -201,6 +253,19 @@ div.inline2{
     margin-left: 100px;
     margin-right: 350px;
     
+
+  }
+  .outer{
+    width: 100%;
+  }
+  
+  .image{
+    width: 40%;
+
+  }
+  .show-description{
+    width: 45%;
+
 
   }
   

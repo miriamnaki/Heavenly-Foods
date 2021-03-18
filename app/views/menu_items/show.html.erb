@@ -1,21 +1,22 @@
 <div class='container'>
 
 <div class='card ml-4 mr-4 mb-4 mt-4'>
-  <div class='ml-4 mr-4 mb-4 mt-4'>
+  <div class='outer ml-4 mr-4 mb-4 mt-1'>
 
     <br><br>
-    <div class='inline'>
-      <%= image_tag(@menu_item.image,class:'menu_item_image') %>
+    
+    <div class='inline image'>
+      <%= image_tag(@menu_item.image,class:'show_item_image') %>
     </div>
 
-    <div class='inline ml-3'>
+    <div class='inline show-description'>
         <h1 class='title2'><%= @menu_item.title.titleize %></h1>
         <p class='label' id='price'>$<%= @menu_item.price%></p>
         <p class='label'><%= @menu_item.description%></p>
 
-            <div class='inline2'>
             <%= form_with model:@shopping_cart_item,local: true do |f|%>
 
+            <div class='inline'>
             <%= f.hidden_field :menu_item_id, value: @menu_item.id%>
             <%  f.label :quantity%>
             <%= f.number_field :quantity, min:1,value:1,class:'label',id:'quantity'%>
@@ -30,16 +31,17 @@
 
           
       
-      <% @menu_item.categories.each do |category|%>
-      <h6  class='label'>CATEGORIES: <%= category.name%></h6>
-      <%end%>
+          <% @menu_item.categories.each do |category|%>
+          <h6  class='label mt-2'>CATEGORIES: <%= category.name%></h6>
+          <%end%>
 
-      <h6 class='label'>SHARE: <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/login?lang=en/"> <i class="fab fa-twitter "></i></a>
-      <a href="https://www.instagram.com/accounts/login/"> <i class="fab fa-instagram"> </i></a>
-      </h6>
+          <h6 class='label'>SHARE: <a href="https://www.facebook.com/"> <i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/login?lang=en/"> <i class="fab fa-twitter "></i></a>
+          <a href="https://www.instagram.com/accounts/login/"> <i class="fab fa-instagram"> </i></a>
+          </h6>
 
     </div>
+    
    
     
     <% if @reviews.present? %>
@@ -88,7 +90,7 @@
       </div>
     <% end %>
 
-    <hr>
+    <hr style= 'max-width:90%';>
 
 
     <br>

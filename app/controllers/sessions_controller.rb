@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:alert] = "Welcome #{@user.first_name}"
-      redirect_to root_path notice:'Welcome!'
+      redirect_to root_path
       
       
     else
