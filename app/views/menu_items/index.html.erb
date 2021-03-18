@@ -29,7 +29,7 @@
               <strong>Filter </strong>
             </div>
 
-            <div class='inline'>
+            <div class='range-tag inline'>
               <%= range_field_tag 'price', nil, min:0, max:100, oninput:'this.nextElementSibling.value = this.value',value:0,class:'mb-4 range-tag' %>
               <output>0</output>
             </div>
@@ -118,7 +118,8 @@ $(document).ready(function(){
 
     const price = $('#price_search').val();
     $('#price').val(price)
-    $('#price').trigger('change')
+    $('#price').trigger('change');
+    $('#price').trigger('oninput');
   })
 })
 </script>

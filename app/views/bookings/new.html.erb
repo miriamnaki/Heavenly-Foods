@@ -1,42 +1,40 @@
-<div class='table'>
+
 <div class='container'> 
-<div>
-
-<h1 class='header'> reserve your table </h1>
-
-<br><br><br><br><br><br>
-
-<%= form_with model:@booking, local: true do |f|%>
 
 
-<div class='inline num-people'>
-<% num_people_array = Array(1..10).map { |number| ["#{number} people", number] } %>
-<% f.label :num_people %>
-<%= f.select :num_people, num_people_array,class:'btn btn-primary',value:1 %>
-</div>
+  <h1 class='header'> reserve your table </h1>
 
-<div class='inline'>
-<% f.label :date%>
-<%= f.date_field :date, min: Date.today, class:'btn btn-primary',value:Date.today %>
-</div>
+  <br><br><br><br>
+
+  <%= form_with model:@booking, local: true do |f|%>
 
 
-<div class='inline'> 
-<% f.label :time %>
-<%= f.time_field :time,class:'btn btn-primary',value:Time.now.to_s%>
+  <div class='inline num-people'>
+    <% num_people_array = Array(1..10).map { |number| ["#{number} people", number] } %>
+    <% f.label :num_people %>
+    <%= f.select :num_people, num_people_array,class:'btn btn-primary',value:1 %>
+  </div>
 
- 
-</div>
+  <div class='inline'>
+    <% f.label :date%>
+    <%= f.date_field :date, min: Date.today, class:'btn btn-primary',value:Date.today %>
+  </div>
 
-<div class='inline'>
-<%= f.submit 'BOOK NOW',class:'btn btn-primary ' %>
-</div>
+
+  <div class='inline'> 
+    <% f.label :time %>
+    <%= f.time_field :time,class:'btn btn-primary',value:Time.now.to_s%>
+  </div>
+
+  <div class='inline'>
+    <%= f.submit 'BOOK NOW',class:'btn btn-primary ' %>
+  </div>
 
 
 <br><br><br><br><br><br><br><br>
 
 <%end%>
-</div>
+
 
 </div>
-</div>
+

@@ -11,17 +11,17 @@ body.bookings {
   margin-left:0px;
   padding:0;
   
-  div.inline{
+  .inline{
     display: inline;
   }
   .btn-primary:hover,
   .btn-primary,
-      .btn-primary:active,
-      .btn-primary:visited,
-      .btn-primary:focus {
-        background-color: goldenrod !important;
-        border-color: goldenrod !important;
-        width: 20%;
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
+    width: 20%;
   }
   .header{
     font-weight: bolder;
@@ -32,15 +32,37 @@ body.bookings {
   select {
     border-radius: 3px;
     border:none;
-    margin: 50px;
     width: 20%;
     height: 40px;
     background: goldenrod;
-    color: #000;
+    // color: #000;
   }
   .num-people{
     font-family: 'Shippori Mincho', serif;
   }
+  .card-subtitle {
+    font-family: 'Shippori Mincho', serif;
+
+  }
+  .all-bookings{
+    font-family: 'Shippori Mincho', serif;
+    
+  }
+  .card{
+    margin-left: 400px;
+    background-color: #eed;
+  }
+  .card-title{
+    font-family: 'Shippori Mincho', serif;
+    color: green;
+  }
+  .btn-success{
+    width: 20%;
+    margin-left: 430px;
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
+  }
+  
 
   
 }

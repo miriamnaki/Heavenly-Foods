@@ -2,28 +2,67 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.menutypes{
+  background:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url('gallery/menutype.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+
+  // new
+.new_menutype_title{
+  font-family: 'Shippori Mincho', serif;
+  margin-top:10px;
+  font-size: 40px;
+  text-align: center;
+}
+.jumbotron{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 100px;
+  margin-right: 350px;
+  background-color: #eed; 
+}
+.label{
+  font-family: 'Shippori Mincho', serif;
+  text-align: left; 
+  font-size: 20px;
+}
+
+.btn-primary{
+ 
+background-color: goldenrod !important;
+border-color: goldenrod !important;
+margin-left: 0px;
+font-family: 'Shippori Mincho', serif;
+        
+}
+
 .menu-type-title{
   font-size: 35px;
   font-weight: bolder;
   font-family: 'Akaya Telivigala', cursive;
   text-align: center;
 }
+
 .menu-item-title{
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   font-family: 'Akaya Telivigala', cursive;
   
   
-
 }
 .menu-item-price{
   font-size: 25px;
   font-weight: bold;
+  
   font-family: 'Shippori Mincho', serif;
 
 }
 .menu-item-description{
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Shippori Mincho', serif;
   
 
@@ -39,6 +78,7 @@ body.menutypes{
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
+  padding-bottom: 30px;
   background-color: goldenrod;
   
 }
@@ -48,32 +88,10 @@ body.menutypes{
 #item-description{
   background-color:peachpuff;
 }
-.jumbotron{
-  margin-top: 60px;
-  margin-bottom: 60px;
-  margin-left: 100px;
-  margin-right: 350px;
+.card{
+  background-color: #eed; 
+}
 
-  
-}
-.new_menutype_title{
-  font-family: 'Shippori Mincho', serif;
-  margin-left: 10%;
-  margin-top:10px;
-  font-size: 40px;
-}
-.label{
-  font-family: 'Shippori Mincho', serif;
-  font-size: 20px;
-}
-.btn-primary:hover,
-.btn-primary,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-background-color: goldenrod !important;
-border-color: goldenrod !important;
-        
-  }
+
 
 }

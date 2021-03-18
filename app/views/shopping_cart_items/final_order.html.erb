@@ -1,7 +1,7 @@
 <div class='container'>
 
 <div class='card ml-4 mr-4 mb-4 mt-4'>
-<div class='ml-4 mr-4 mb-4 mt-4'>
+<div class='card-content'>
 
 <br>
 <h3 class='cart-title'>Your order</h3>
@@ -12,47 +12,56 @@
 <tbody>
 
 <tr>
-<td>subtotal</td>
+<td>Subtotal</td>
 <td><%= @shopping_cart.subtotal%></td>
 </tr>
 
 <tr>
-<td>tax</td>
+<td>PST</td>
 <td><%= @shopping_cart.tax.round(2)%></td>
 </tr>
 
 <tr>
-<td>delivery fee</td>
+<td>GST</td>
 <td><%= @shopping_cart.delivery_fee.round(2)%></td>
 </tr>
 
 <tr>
-<td>Total</td>
-<td> <%=@shopping_cart.final_total.round(2)%> </td>
+<td class='total'>Total</td>
+<td> <%= number_to_currency(@shopping_cart.final_total.round(2))%> </td>
 </tr>
 
 </tbody>
 </table>
-
+<hr>
 <% if current_user.stripe_id %>
-<p>Pay with **** **** **** <%= last_four_digits(current_user) %></p>
-<%= link_to "PAY $#{ @shopping_cart.final_total.round(2)}", pay_path, class: 'btn btn-primary' %>
+<p class='payment-card'>Pay with:</p>
+<div class='d-inline'> <%= image_tag("gallery/visa.png",class:' visa-logo d-inline')%></div>
+<div class='payment-card d-inline'> **** **** **** <%= last_four_digits(current_user) %></div>
+
+<br><br>
+ <div class='d-flex justify-content-between but'>
+<%= link_to "PAY $#{ @shopping_cart.final_total.round(2)}", pay_path, class:'btn btn-primary' %>
   <%end%>
 
 <br>
 <% if current_user.stripe_id.nil? %>
   <%= form_tag create_payment_method_path, id: "billing-create-payment-method" do  %>
-  <div class='inline-block'>
+ 
+  <div class='but'>
     <%= link_to "ADD CREDIT CARD", add_payment_method_path, remote: true, class: "btn btn-primary" %>
   </div>
 <% end %>
 <% end %>
 <br>
-<div class='inline-block'> 
+
+<div class='but'> 
 <%= link_to 'UPDATE CART', shopping_cart_items_path,class:'btn btn-primary' %>
 </div>
-<br><br><br><br><br><br>
+ </div>
+<br><br><br><br>
 
 </div>
 </div>
+<br><br><br><br><br><br>
 </div>

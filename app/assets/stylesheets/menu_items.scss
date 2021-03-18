@@ -16,6 +16,7 @@ body.menu_items{
   max-width: 100%;
   width: 300px;
   height: 250px;
+  border-radius: 25px 25px 0px 0px;
 }
 
 hr{ 
@@ -45,14 +46,12 @@ hr{
 .title{
   font-family: 'Shippori Mincho', serif;
   color:goldenrod !important;
-  white-space: nowrap;
-
-  
+  white-space: nowrap; 
 }
 .category-label{
   font-size: 18px;
   font-family: 'Shippori Mincho', serif;
-  color:goldenrod !important;
+  color:white !important;
 }
 select {
   border-radius: 3px;
@@ -64,124 +63,14 @@ select {
 select,option{
   font-family: 'Shippori Mincho', serif;
 }
-}
+
 #shop-header{
 font-family: 'Akaya Telivigala', cursive;
 font-weight: bolder;
 font-size: 40px;
 color: goldenrod; 
 }
-
-
-
-
-.title2{
-  color: goldenrod;
-}
-.label{
-  font-family: 'Shippori Mincho', serif;
-  font-size: 20px;
-}
-#price{
-  font-size: 25px;
-  color: goldenrod;
-}
-#quantity{
-  max-width: 20%;
-}
-.new_item_title{
-  font-family: 'Shippori Mincho', serif;
-  margin-left: 10%;
-  margin-top:10px;
-  font-size: 40px;
-}
-.show_item_image{
-  max-width: 100%;
-  margin-top: 10%;
-  width: 400px;
-  height: 400px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  
-}
-
-div.inline{
-  display: inline-block;
-  vertical-align: top;
-}
-
-div.inline2{
-  display: inline-block; 
-}
-.cart{
-  margin-left: 25%;
-  width: 200px;
-  background-color: goldenrod !important;
-}
-.btn-primary:hover,
-  .btn-primary,
-  .btn-primary:active,
-  .btn-primary:visited,
-  .btn-primary:focus {
-    background-color: goldenrod !important;
-    border-color: goldenrod !important;
-        
-  }
-  .fab.fa-facebook-f{
-    color: goldenrod !important;
-    
-  }
-  .fab.fa-twitter {
-    color: goldenrod !important;
-    
-  }
-  .fab.fa-instagram{
-    color: goldenrod !important;
-
-  }
-
-  .form-group{
-    max-width: 500px;
-  }
-  
-  .review_title{
-    color: goldenrod !important;
-    font-weight: bolder;
-    font-size: 30px;
-    font-family: 'Shippori Mincho', serif;
-  }
-  .form-control{
-    outline-color: goldenrod !important;
-  }
-    .btn-outline-primary:hover,
-    .btn-outline-primary,
-    .btn-primary,
-    .btn-outline-primary:active,
-    .btn-outline-primary:visited,
-    .btn-outline-primary:focus {
-      background-color: goldenrod !important;
-      border-color: goldenrod !important;
-      color:white;
-      // width: 40%;
-  }
-  .categories{
-    text-align: right;
-  }
-
-  .menu_item_delete{
-    // margin-left: 28%;
-    color:goldenrod;
-  }
-  select {
-    border-radius: 3px;
-    border:solid goldenrod;
-    width: 160px;
-    height: 30px;
-    color: #000;
-    
-  }
-  
-  .search-container {
+.search-container {
     background-color: goldenrod;
     position: relative;
     border-radius: 30px;
@@ -208,66 +97,216 @@ div.inline2{
     height: 35px;
     outline: 0;
   }
-  .price-search{
-    max-width: 130px;
+  .category-name{
+        font-size: 20px;
+        color: goldenrod;
+      } 
+  .range-tag{
+    height: 1px;
+    color: goldenrod !important;
     
+  }
+  div.inline{
+    display: inline-block;
+    vertical-align: top;
+  }
+  .price-search{
+   max-width: 130px;     
   }
   .filter-price-tag{
     margin-left: 0px;
-    
+  }  
   
   .option-label{
     font-family: 'Vollkorn', serif;
-
-
   }
-  .category-name{
+  .price-search{
+    max-width: 130px;   
+  }
+  .filter-price-tag{
+    margin-left: 0px;
+  }    
+  .option-label{
+    font-family: 'Vollkorn', serif;
+    color: white !important;
     font-size: 20px;
   }
+  span{
+    color: goldenrod;
+  }
+
+
+
+
+
+// new menu item
+.jumbotron{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 200px;
+  margin-right: 250px;
+  background-color: #eed;;
+}
+.new_item_title{
+    font-family: 'Shippori Mincho', serif;
+    margin-left: 10%;
+    margin-top:10px;
+    font-size: 40px;
+  }
+  .label{
+    font-family: 'Shippori Mincho', serif;
+    font-size: 20px;
+    text-align: left;
+    }
+  .btn-primary:hover,
+  .btn-primary,
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+  background-color: goldenrod !important;
+  border-color: goldenrod !important;
+  }
+
+
+
+
+
+
+
+// .title2{
+//   color: goldenrod;
+// }
+
+// #price{
+//   font-size: 25px;
+//   color: goldenrod;
+// }
+// #quantity{
+//   max-width: 20%;
+// }
+// 
+// .show_item_image{
+//   max-width: 100%;
+//   margin-top: 10%;
+//   width: 400px;
+//   height: 400px;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
   
-  .range-tag{
-    height: 1px;
-    
-  }
-  .star-colors{
-    color: goldenrod;
-    font-size: 20px;
-  }
-  .text-area-reply{
-    max-width: 200px;
-  }
-  ul li{
-    color: palevioletred;
-  }
-  .far.fa-star{
-    color: goldenrod;
-    font-size: 20px;
-  }
-  .fas.fa-star{
-    color: goldenrod;
-    font-size: 20px;
-  }
-  .jumbotron{
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 100px;
-    margin-right: 350px;
-    
+// }
 
-  }
-  .outer{
-    width: 100%;
-  }
+// 
+
+   
+// .cart{
+//   margin-left: 25%;
+//   width: 200px;
+//   background-color: goldenrod !important;
+// }
+
+        
+//   }
+//   .fab.fa-facebook-f{
+//     color: goldenrod !important;
+    
+//   }
+//   .fab.fa-twitter {
+//     color: goldenrod !important;
+    
+//   }
+//   .fab.fa-instagram{
+//     color: goldenrod !important;
+
+//   }
+
+//   .form-group{
+//     max-width: 500px;
+//   }
   
-  .image{
-    width: 40%;
+//   .review_title{
+//     color: goldenrod !important;
+//     font-weight: bolder;
+//     font-size: 30px;
+//     font-family: 'Shippori Mincho', serif;
+//   }
+//   .form-control{
+//     outline-color: goldenrod !important;
+//   }
+//     .btn-outline-primary:hover,
+//     .btn-outline-primary,
+//     .btn-primary,
+//     .btn-outline-primary:active,
+//     .btn-outline-primary:visited,
+//     .btn-outline-primary:focus {
+//       background-color: goldenrod !important;
+//       border-color: goldenrod !important;
+//       color:white;
+//       // width: 40%;
+//   }
+//   .categories{
+//     text-align: right;
+//   }
 
-  }
-  .show-description{
-    width: 45%;
+//   .menu_item_delete{
+//     // margin-left: 28%;
+//     color:goldenrod;
+//   }
+//   select {
+//     border-radius: 3px;
+//     border:solid goldenrod;
+//     width: 160px;
+//     height: 30px;
+//     color: #000;
+    
+//   }
+  
+//   
+//   .price-search{
+//     max-width: 130px;
+    
+//   }
+//   .filter-price-tag{
+//     margin-left: 0px;
+    
+  
+//   .option-label{
+//     font-family: 'Vollkorn', serif;
 
 
-  }
+//   }
+//   
+//   .star-colors{
+//     color: goldenrod;
+//     font-size: 20px;
+//   }
+//   .text-area-reply{
+//     max-width: 200px;
+//   }
+//   ul li{
+//     color: palevioletred;
+//   }
+//   .far.fa-star{
+//     color: goldenrod;
+//     font-size: 20px;
+//   }
+//   .fas.fa-star{
+//     color: goldenrod;
+//     font-size: 20px;
+//   }
+  
+//   .outer{
+//     width: 100%;
+//   }
+  
+//   .image{
+//     width: 40%;
+
+//   }
+//   .show-description{
+//     width: 45%;
+
+
+//   }
   
   
   

@@ -12,6 +12,9 @@
     <div class='inline show-description'>
         <h1 class='title2'><%= @menu_item.title.titleize %></h1>
         <p class='label' id='price'>$<%= @menu_item.price%></p>
+        <% @menu_item.reviews.each do |review| %>
+          <p><%= display_stars(review)%></p>
+        <% end %>
         <p class='label'><%= @menu_item.description%></p>
 
             <%= form_with model:@shopping_cart_item,local: true do |f|%>

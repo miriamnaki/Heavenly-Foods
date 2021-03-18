@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :shopping_cart_items do
     collection do
       get 'final_order'
+      post 'add'
     end
   end
   resources :categories

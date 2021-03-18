@@ -2,22 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.transactions{
-  .receipt-body{
-    margin-left: 380px;
-    font-family: 'Shippori Mincho B1', serif;
+
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('gallery/cart.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:left;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+
+  .stars{
+    font-weight: bolder;
   }
-  hr{
-    margin-right: 300px;
-    margin-left: 300px;
-    font-family: 'Shippori Mincho B1', serif;
-  }
-  .footer{
+  .card-body{
     font-family: 'Shippori Mincho B1', serif;
   }
   .header{
-    font-family: 'Shippori Mincho B1', serif;
+    text-align: center;
   }
-  .stars{
-    font-weight: bolder;
+  .items{
+    margin-left: 150px;font-size: 10px;
+  }
+  ol,li{
+    font-size: 18px;
+  }
+  .card{
+    background-color: #eed; 
+    margin-left: 250px;
+  }
+  .btn-success{
+    width: 20%;
+    margin-left: 430px;
+    background-color: goldenrod !important;
+    border-color: goldenrod !important;
   }
 }

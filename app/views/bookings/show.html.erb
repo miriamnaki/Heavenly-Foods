@@ -1,3 +1,22 @@
-<p><%= @booking.num_people %></p>
-<p><%= @booking.booking_time.strftime('%m/%d/%y') %></p>
-<p><%= @booking.booking_time.strftime('%I:%M %p') %></p>
+<div class='container'>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+        <h5 class="card-title">Your reservation is confirmed!</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Your confirmation number is #<%= @booking.id %></h6>
+        <div class='all-bookings'>
+           <p> Number of people: <%= @booking.num_people %></p>
+        </div>
+
+        <div class='all-bookings'>
+        <p>Date: <%= @booking.booking_time.strftime('%m/%d/%y') %></p>
+        </div>
+
+        <div class='all-bookings'>
+        <p>Time: <%= @booking.booking_time.strftime('%I:%M %p') %></p>
+        </div>
+  </div>
+</div>
+<br>
+        <%= link_to "VIEW MORE", menu_items_path, class:"nav-link btn btn-success" %> 
+</div>
+<br><br><br><br><br><br><br><br><br>

@@ -1,11 +1,13 @@
 
 
-
+<% if !menu_items.exists? %>
+  <h1>Sorry no results</h1>
+<% end %>
 
   
   <% menu_items.each do |item|%>
   
- <div class='col-4'>
+ <div class='col-4' id="menu-item-<%= item.id %>">
   <div class="card mb-3 card-effect" style="width: 18rem;">
   <% if item.image.attached?%>
     <%= image_tag(item.image,class:'index_item_image') %>
@@ -15,12 +17,13 @@
     <h4> <%= link_to item.title.titleize, menu_item_path(item),class:"card-title"%></h4>
     <h6><%= link_to  number_to_currency(item.price),  menu_item_path(item),class:"card-title"%></h6>
     
-        <%= link_to("ADD TO CART", shopping_cart_items_path,class:'btn btn-primary') %>
+        <%= link_to("ADD TO CART", add_shopping_cart_items_path(menu_item_id: item.id),class:'btn btn-primary add-to-cart-btn', method: :post, remote: true) %>
   </div>
   </div>
 </div>
 
 <%end%>
+
 
 
   

@@ -1,21 +1,21 @@
 <div class='container'>
 
 <div class='card ml-4 mr-4 mb-4 mt-4'>
-<div class='ml-4 mr-4 mb-4 mt-4'>
+   <div class='ml-4 mr-4 mb-4 mt-4'>
 
-<%  @menu_types.each do |type|%>
+    <%  @menu_types.each do |type|%>
 
-  <div class='menu-type-title'>
-      <%= type.menutype%>
-  </div>
+      <div class='menu-type-title'>
+          <%= type.menutype%>
+      </div>
 
-<div class='row'>
-  <%  type.menu_items.each do |item|%>
+    <div class='row'>
+      <%  type.menu_items.each do |item|%>
   
         <div class='menu-item-title col-6 '>
 
           <div class='d-flex justify-content-between menu-item-items-attributes'>
-            <div class='menu-item-items-attributes'>
+            <div class='menu-item-items-attributes text-left'>
                <%= item.title%>
             </div>
 
@@ -29,7 +29,7 @@
       </div>
       
       
-        <div class='menu-item-items-attributes menu-item-description'id='item-description'>
+        <div class='menu-item-items-attributes menu-item-description text-left'id='item-description'>
         <%= item.description%>
         </div>
       </div>

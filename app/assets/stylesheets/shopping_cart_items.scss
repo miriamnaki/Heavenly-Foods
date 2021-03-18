@@ -2,18 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.shopping_cart_items{
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('gallery/cart.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:left;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+
+
+
   .btn-primary:hover,
   .btn-primary,
-      .btn-primary:active,
-      .btn-primary:visited,
-      .btn-primary:focus {
-        background-color: goldenrod !important;
-        border-color: goldenrod !important;
-        
-        
-        
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+  background-color: goldenrod !important;
+  border-color: goldenrod !important;     
   }
   .cart-title{
     font-family: 'Shippori Mincho B1', serif;
+    font-size: 30px;
+  }
+  .shopping_cart_item_image {
+     height: 90px;
+     width: 90px;
+  }
+  .card{
+    background-color: #eed; 
+  }
+  tbody{
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 18px;
+  }
+  thead{
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 20px;
+  }
+  .but{
+    font-family: 'Shippori Mincho B1', serif;
+  }
+  .no-items-cart{
+    font-family: 'Shippori Mincho B1', serif;
+  }
+  .total{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  hr{ 
+    border: none; 
+    height: 1px; 
+    background-color: goldenrod;
+    width:100%
+    
+  }
+  .payment-card{
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 20px;
+    
+  }
+  .card-content{
+    margin: 80px;
+  }
+  .visa-logo{
+    width: 25px;
+    height: 20px;
   }
 }

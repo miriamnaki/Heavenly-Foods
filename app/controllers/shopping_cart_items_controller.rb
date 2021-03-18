@@ -11,6 +11,17 @@ class ShoppingCartItemsController < ApplicationController
       redirect_to menu_item_path(shopping_cart_item.menu_item)
     end
   end
+
+  def add
+    shopping_cart = ShoppingCart.find_or_create_by(user: current_user)
+    @menu_item = MenuItem.find(params[:menu_item_id])
+    if (shopping_cart_item = shopping_cart.shopping_cart_items.find_by(menu_item: @menu_item))
+      shopping_cart_item.quantity +=1
+      shopping_cart_item.save
+    else
+      shopping_cart_item = ShoppingCartItem.create(shopping_cart: shopping_cart, menu_item: @menu_item ,quantity: 1)
+    end
+  end
   
   def index
     @shopping_cart = ShoppingCart.find_or_create_by(user: current_user)

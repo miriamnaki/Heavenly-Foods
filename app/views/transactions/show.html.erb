@@ -1,37 +1,49 @@
+
+
+
 <div class='container'>
+<div class="card" style="width: 40rem;">
+
+  <div class="card-body">
+      <div class='header'>
+        <h5 class="card-title">
+          <h5 class='mb-2 stars'>************** your receipt ****************</h5>
+          <div>
+            <%= image_tag("home/logo.png",class:'img-responsive logo')%>
+         </div>
+          <h6>628 6th Ave #600</h6>
+          <h6> New Westminster, BC</h6>
+          <strong>Purchase id: <%= @transaction.id%> </strong>
+        </h5>
+      </div>
+        <hr>
+      <div class='items'>
+      <h6 class="card-subtitle mb-2 text-muted">
+        <div>
+            <strong>Bought:</strong>
+            <ol>
+              <% @transaction.menu_items.each do |menu_item_title, data| %>
+                <li><%= data['quantity'] %> <%= menu_item_title %> @ <%= number_to_currency(data['price']) %> each </li> 
+              <% end %>
+            </ol>
+            <hr>
+            <strong>Total: <%= number_to_currency(@transaction.total / 100.0) %> </strong>
+            <p>Bought on <%= @transaction.created_at.to_date%> </p>
+            <strong>Please Note: The above amount includes taxes! </strong>
+      </div>
+    </h6>
+  </div>
+
+        <div class='header'>
+          <strong class='stars'>*****************************************************************</strong>
+          <p class='stars'>Thank you for shoppping with us. Hope you enjoy your meal</p>
+          <strong class='stars'>*****************************************************************</strong>
+        </div>
+  </div>
+</div>
+
 <br><br>
-<div class= 'card ml-4 mr-4 mt-4 mb-4'>
-<div class='mr-4 ml-4 mb-4 mt-4 '>
 
-<div class='text-center header'>
-<h5 class='mb-2 stars'>************** YOUR RECEIPT ****************</h5>
-<h5>HEAVENLY FOODS</h5>
-<h5>628 6th Ave #600</h5>
-<h5> New Westminster, BC</h5>
-<strong>Purchase id: <%= @transaction.id%> </strong>
+    <%= link_to "BACK", menu_items_path, class:"btn btn-success" %> 
 </div>
-
-<hr>
-<div class='receipt-body'>
-<strong>Items:</strong>
-<ol>
-  <% @transaction.menu_items.each do |menu_item_title, data| %>
-    <li><%= data['quantity'] %> <%= menu_item_title %> @ <%= number_to_currency(data['price']) %> each </li>
-    
-    
-  <% end %>
-</ol>
-<strong>Total: <%= number_to_currency(@transaction.total / 100.0) %> </strong>
-<p>Bought on <%= @transaction.created_at.to_date%> </p>
-</div>
-
-<div class='text-center footer'>
-<strong class='stars'>*****************************************************************</strong>
-<p class='stars'>Thank you for shoppping with us. Hope you enjoy your meal</p>
-<strong class='stars'>*****************************************************************</strong>
-</div>
-</div>
-</div>
-
-<br><br><br><br>
-</div>
+<br><br><br><br><br><br><br><br>

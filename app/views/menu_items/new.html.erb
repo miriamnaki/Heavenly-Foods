@@ -1,6 +1,6 @@
 <div class='container'>
 
-<div class='card ml-4 mr-4 mt-4 mb-4'>
+
   <div class='jumbotron'>
 
     <h3 class='new_item_title'>Upload your menu item</h3>
@@ -9,24 +9,24 @@
             <%= @menu_item.errors.full_messages.join(', ')%>
         <%end%>
 
-        <div class='form-group mt-3'>
-          <%= f.label :title,class:'label' %>
+        <div class='label form-group mt-3'>
+          <%= f.label :title %>
           <%= f.text_field :title, class:'form-control' %>
         </div>
 
-        <div class ='form-group'>
-          <%= f.label :description,class:'label' %>
+        <div class ='label form-group'>
+          <%= f.label :description %>
           <%= f.text_field :description, class:'form-control' %>
         </div>
 
-        <div class ='form-group'>
-          <%= f.label :price,class:'label' %>
-          <%= f.number_field :price, class:'form-control' %>
+        <div class ='label form-group'>
+          <%= f.label :price %>
+          <%= f.number_field :price, step: :any, class:'form-control' %>
         </div>
 
 
-        <div class='form-group'> 
-          <%= f.label :image,class:'label'%>
+        <div class='label form-group'> 
+          <%= f.label :image%>
           <%= f.file_field :image%>
         </div>
 
@@ -41,7 +41,7 @@
           <%= f.select :menutype_id, Menutype.all.map {|m| [m.menutype,m.id]} %>
         </div>
 
-        <div class='form-group'>
+        <div class=' text-left form-group'>
           <%= f.submit 'UPLOAD' ,class:'btn btn-primary'%>
         </div>
        <% end %>
@@ -50,4 +50,3 @@
 <br><br><br><br><br><br>
   </div>
  </div>
-</div>
