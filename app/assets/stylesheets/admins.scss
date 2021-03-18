@@ -1,0 +1,35 @@
+// Place all the styles related to the admins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body.admins{
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('gallery/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  text-align:center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+
+  .btn-primary:hover,
+  .btn-primary,
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+  background-color: goldenrod !important;
+  border-color: goldenrod !important;
+  color: white;
+  }
+  .circle
+{
+  width:150px;height:150px;
+  border: solid 1px #555;
+  background-color: #eed;
+  box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
+  border-radius:100px;
+}
+
+}

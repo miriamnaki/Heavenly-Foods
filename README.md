@@ -41,3 +41,11 @@ Things you may want to cover:
         <%# <% if can? :crud,item %> %>
         <%# <%= link_to("EDIT", edit_menu_item_path(item),class:'menu_item_delete')%> %>
         <%# <%end%> %>
+
+        <li class="nav-item">
+        <%= link_to "NEW MENU ITEM", new_menu_item_path, class:"nav-link" %>
+       </li>  
+       <li class="nav-item">
+         <%= link_to "NEW MENU TYPE", new_menutype_path, class:"nav-link" %>
+        </li>  
+      <% end %>

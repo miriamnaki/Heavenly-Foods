@@ -36,4 +36,8 @@ Rails.application.routes.draw do
   get '/success' => 'billings#success', as: :success
   get '/pay' => 'billings#pay', as: :pay
   resources :transactions
+
+  get '/admin' => 'admins#admin', as: :admin
+
+  
 end
