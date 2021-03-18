@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body.menu_items{
-  background:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)),url('home/shopping3.jpg');
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('home/shopping3.jpg');
   background-repeat: no-repeat;
   background-size: cover; 
   background-position: center center;
@@ -21,7 +21,7 @@ body.menu_items{
 
 hr{ 
   border: none; 
-  height: 2px; 
+  height: 1px; 
   background-color: goldenrod;
   width:100%
   
@@ -145,7 +145,7 @@ color: goldenrod;
   margin-bottom: 60px;
   margin-left: 200px;
   margin-right: 250px;
-  background-color: #eed;;
+  background-color: #eed;
 }
 .new_item_title{
     font-family: 'Shippori Mincho', serif;
@@ -158,6 +158,9 @@ color: goldenrod;
     font-size: 20px;
     text-align: left;
     }
+    .label2{
+      font-family: 'Shippori Mincho', serif;
+    }
   .btn-primary:hover,
   .btn-primary,
   .btn-primary:active,
@@ -165,84 +168,124 @@ color: goldenrod;
   .btn-primary:focus {
   background-color: goldenrod !important;
   border-color: goldenrod !important;
+  color: white;
   }
 
 
+// show page
+.show_item_image{
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left:0px; 
+  border: solid 1px #555;
+  box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  border-radius:25px;
+}
+.show-description{
+  width: 45%;
+}
+.outer{
+  width: 100%;
+}
 
+.title2{
+  color: goldenrod;
+}
 
+#price{
+  font-size: 25px;
+  color: goldenrod;
+}
+#quantity{
+  max-width: 20%;
+}
 
-
-
-// .title2{
-//   color: goldenrod;
-// }
-
-// #price{
-//   font-size: 25px;
-//   color: goldenrod;
-// }
-// #quantity{
-//   max-width: 20%;
-// }
-// 
-// .show_item_image{
-//   max-width: 100%;
-//   margin-top: 10%;
-//   width: 400px;
-//   height: 400px;
-//   margin-top: 10px;
-//   margin-bottom: 10px;
+.fab.fa-facebook-f{
+  color: goldenrod !important;
   
-// }
+}
+.fab.fa-twitter {
+  color: goldenrod !important;
+  
+}
+.fab.fa-instagram{
+  color: goldenrod !important;
 
-// 
+}
+.far.fa-star{
+  color: goldenrod;
+  font-size: 20px;
+}
+.fas.fa-star{
+  color: goldenrod;
+  font-size: 20px;
+}
 
-   
+// reviews
+.star-colors{
+  color: goldenrod;
+  font-size: 20px;
+}
+
+.review_title{
+  color: goldenrod !important;
+  font-weight: bolder;
+  font-size: 30px;
+  font-family: 'Shippori Mincho', serif;
+  text-align: left;
+  margin-left: 50px;
+}
+.form-group{
+  max-width: 500px;
+}
+
+.form-control{
+  outline-color: goldenrod !important;
+}
+.text-area-reply{
+  max-width: 200px;
+}
+ul li{
+  color: palevioletred;
+}
+.review-card{
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 500px;
+  background-color:peachpuff;
+}
+.all-reviews{
+  margin-left: 50px;
+
+}
+.main-card{
+  background-color: #eed;;
+}
 // .cart{
 //   margin-left: 25%;
 //   width: 200px;
 //   background-color: goldenrod !important;
 // }
 
+
+
+
+ 
+
+   
+
+
         
 //   }
-//   .fab.fa-facebook-f{
-//     color: goldenrod !important;
-    
-//   }
-//   .fab.fa-twitter {
-//     color: goldenrod !important;
-    
-//   }
-//   .fab.fa-instagram{
-//     color: goldenrod !important;
 
-//   }
 
-//   .form-group{
-//     max-width: 500px;
-//   }
-  
-//   .review_title{
-//     color: goldenrod !important;
-//     font-weight: bolder;
-//     font-size: 30px;
-//     font-family: 'Shippori Mincho', serif;
-//   }
-//   .form-control{
-//     outline-color: goldenrod !important;
-//   }
-//     .btn-outline-primary:hover,
-//     .btn-outline-primary,
-//     .btn-primary,
-//     .btn-outline-primary:active,
-//     .btn-outline-primary:visited,
-//     .btn-outline-primary:focus {
-//       background-color: goldenrod !important;
-//       border-color: goldenrod !important;
-//       color:white;
-//       // width: 40%;
-//   }
+
+
 //   .categories{
 //     text-align: right;
 //   }
@@ -275,38 +318,17 @@ color: goldenrod;
 
 //   }
 //   
-//   .star-colors{
-//     color: goldenrod;
-//     font-size: 20px;
-//   }
-//   .text-area-reply{
-//     max-width: 200px;
-//   }
-//   ul li{
-//     color: palevioletred;
-//   }
-//   .far.fa-star{
-//     color: goldenrod;
-//     font-size: 20px;
-//   }
-//   .fas.fa-star{
-//     color: goldenrod;
-//     font-size: 20px;
-//   }
+//   
+
+
   
-//   .outer{
-//     width: 100%;
-//   }
+//  
   
 //   .image{
 //     width: 40%;
 
 //   }
-//   .show-description{
-//     width: 45%;
 
-
-//   }
   
   
   
