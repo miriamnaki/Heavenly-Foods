@@ -4,24 +4,44 @@
 
 
 body.categories{
+  background:linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)),url('gallery/login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center center;
+  margin-right:0px;
+  margin-left:0px;
+  padding:0;
+  
   .menu_item_image{
-    max-width: 100%;
-    margin-top: 10%;
-    width: 400px;
-    height: 400px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  width: 300px;
+  height: 300px;
+  border: solid 1px #555;
+  background-color: #eed;
+  box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -moz-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -webkit-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  -o-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+  // border-radius:25px;
+    
   }
   .inline{
     display: inline;
   }
   .category-title{
     font-family: 'Shippori Mincho B1', serif;
+    
   }
   .category-name{
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Shippori Mincho B1', serif;
+    color: goldenrod !important;
   }
   .title-price{
     color: goldenrod;
+    font-size: 20px;
+    
+  }
+  .inner-jumbotron{
+    background-color: #eed;
   }
 }
