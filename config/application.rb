@@ -21,6 +21,11 @@ Bundler.require(*Rails.groups)
 
 module RestaurantApp
   class Application < Rails::Application
+
+    config.assets.enabled = true
+    config.assets.paths << Rails.root.join("app", "assets")
+    # config.assets.enabled = true
+    # config.assets.paths << "#{Rails.root}/app/assets/videos"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 

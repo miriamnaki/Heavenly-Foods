@@ -12,9 +12,7 @@
     <div class='inline show-description text-left ml-3'>
         <h1 class='title2'><%= @menu_item.title.titleize %></h1>
         <p class='label' id='price'>$<%= @menu_item.price%></p>
-        <% @menu_item.reviews.each do |review| %>
-          <p class='star-colors'><%= display_stars(review)%></p>
-        <% end %>
+        
         <p class='label'><%= @menu_item.description%></p>
 
             <%= form_with model:@shopping_cart_item,local: true do |f|%>
@@ -51,21 +49,24 @@
    <h5 class='review_title'>All reviews</h5>
    <hr style= 'max-width:90%';>
    <% end %>
+
     <%# This is a review list  %>
     <% @reviews.each do |review|%>
 
     <div class='text-left all-reviews'>
+
       <div class='label2'>
         <%= review.user&.first_name || "DELETED" %> says:
-      </div>
+     </div>
 
       <div class='star-colors'>
         <%= display_stars(review)%>
-      </div>
+     </div>
 
       <div class='label2'>
         <%= review.body %>
       </div>
+
       <% if review.replies.exists? %>
         <ul>
           <% review.replies.each do |reply| %>
@@ -73,15 +74,17 @@
           <% end %>
         </ul>
       <% end %>
+
       <% if current_user == review.user %>
       <div class='inline'>
         <%= link_to "DELETE",menu_item_review_path(@menu_item,review), method: :delete,data: {confirm: "Delete review?"},class:'btn btn-primary' %>
-      <% end%>
       </div>
+      <% end%>
 
-      <div class='inline ml-4'>
+      <div class='inline  ml-0'>
         <%= link_to 'REPLY', '#', class: 'reply-btn btn btn-primary' %>
-        <div class='d-none reply'>
+    
+      <div class='d-none reply'>
         <br>
           <%= form_for Reply.new do |f| %>
            <% if current_user %>
@@ -95,9 +98,12 @@
           <% end %>
         </div>
       </div>
+    </div>
+    <hr style= 'max-width:90%';>
+
     <% end %>
     <br><br>
-     <hr style= 'max-width:90%';>
+     
     </div>
     
     
