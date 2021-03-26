@@ -32,6 +32,7 @@ gem 'stripe'
 gem 'stripe-rails'
 gem 'figaro'
 
+gem 'mimemagic', '~> 0.3.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
