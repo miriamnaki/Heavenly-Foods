@@ -1,51 +1,62 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Heavenly Foods - Online Shopping Application
+## Table of Contents
+* Summary
+* Technology Used
+* Features
+* Screenshots
+* Live Demo
+* Installation
 
-Things you may want to cover:
+## Summary
+This application is for restaurant owners who want to control their menus by uploading menu items for users.Users can shop for food and book/reserve tables on line and checkout items using stripe.Users can contact the restaurant administration by mail or leave comments on menu items.
 
-* Ruby version
+## Technology used:
 
-* System dependencies
+* Ruby on Rails v 6.1
+* Bootstrap
+* HTML / html.erb
+* CSS
+* Javascript
+* JQuery
+* Ajax
+* Stripe
 
-* Configuration
 
-* Database creation
+## Features:
+* Users can shop for items (filtering and search)
+* Email system (form to admin and user)
+* Stripe integration (payments, user and account management)
+* Users can book tables
+* Contact the admin
+* Admin can manage the menus (add details and images)
 
-* Database initialization
 
-* How to run the test suite
+## Screenshots:
+* screenshot_1
+![image](https://user-images.githubusercontent.com/74625242/112586584-4caffc00-8db9-11eb-88f2-637ed6e0b3c6.png)
+
+* screenshot_2
+![image](https://user-images.githubusercontent.com/74625242/112586649-6b15f780-8db9-11eb-9f12-f1bea403b459.png)
+
+* screenshot_3
+![image](https://user-images.githubusercontent.com/74625242/112586773-9993d280-8db9-11eb-88f5-b8504c820e32.png)
+
+
+## Installation:
+* git clone URL
+* cd into project
+* Run npm i
+* Run rails s
+* On the browser run localhost:3000
+
+
+
+
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
 * ...
-
-//this raises an error when the user logs in
-* <% if current_user %>
-      <li>
-        <i class="fa fa-shopping-cart"></i>
-        <span> <%= current_user.shopping_cart_items_count%></span>
-      </li>
-
-      category snack causes an error when clicked
-
-
-
-      <%# <% if can? :crud,item %> %>
-        <%# <%= link_to("DELETE", menu_item_path(item),method: :delete, data:{confrim:'Delete item?'},class:'menu_item_delete')%> %>
-        <%# <%end%> %>
-
-        <%# <% if can? :crud,item %> %>
-        <%# <%= link_to("EDIT", edit_menu_item_path(item),class:'menu_item_delete')%> %>
-        <%# <%end%> %>
-
-        <li class="nav-item">
-        <%= link_to "NEW MENU ITEM", new_menu_item_path, class:"nav-link" %>
-       </li>  
-       <li class="nav-item">
-         <%= link_to "NEW MENU TYPE", new_menutype_path, class:"nav-link" %>
-        </li>  
-      <% end %>
